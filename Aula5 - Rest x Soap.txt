@@ -1,0 +1,32 @@
+SOAP x REST
+
+
+SOAP - Criado pela microsoft
+
+Facilitava a integração entre sistemas
+Usa um envelopamento próprio (Envelopes Soap - usa o HTTP para fazer chamadas RPC(?) trafegando XML.
+Pode se dizer que o SOAP é um protocolo de troca de mensagens em XML.
+Usa WSDL na comunicação entre cliente e servidor.
+Retorna apenas resultados em XML que nao são facilmente legíveis para humanos.
+Possui mais opcoes de comunicação do que apenas HTTP, pode ser feita por SMTP, FTP , etc.
+Bem complexo de invocar um servico SOAP utilizando JavaScript.
+Os arquivos trafegados sao maiores no SOAP(por causa do envelopamento), resultando em uma performance pior.
+
+REST - Criado por Ray Fielding
+
+Facilitava a integração entre sistemas.
+Modelo arquitetural constante.
+Já o REST faz requisições HTTP e suporta diversos formatos de arquivos.
+Pode se dizer que o Rest é um estilo arquitetural.
+Usa XML, JSON etc para enviar e receber dados.
+Retorna resultados em JSON, XML entre outros.
+Comunicação feita APENAS por HTTP.
+Facil de invocar via JavaScript.
+Arquivos mais leves = performance melhor.
+
+
+
+
+
+
+

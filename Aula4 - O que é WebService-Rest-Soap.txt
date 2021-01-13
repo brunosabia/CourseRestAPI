@@ -1,0 +1,6 @@
+Aula 4 - O que são WebServices?
+É uma comunicação Server-client pela Internet onde o cliente faz requisições e recebe responses
+
+O que é REST/SOAP?
+é uma forma de fragmentar o codigo e disponibilizar para reuso partes comuns entre os webservices.
+Por exemplo os logins de autenticação de CPF/CNPJ do governo. Te permite, atravez de um pedaço do codigo do governo de acessar o mesmo tipo de informação.
