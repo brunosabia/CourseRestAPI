@@ -1,0 +1,49 @@
+HTTP Requests and Responses
+
+A coluna vertebral do REST é o protocolo HTTP
+
+Exemplo para acessar algo:
+Vc acessa um site pelo browser 
+O Browser faz uma operação de request HTTP por baixo dos panos.
+Este request chega no servidor em que a página esta hospedada.
+O servidor devolve a response.
+
+Basicamente essa é uma comunicação basica entre cliente servidor intermediada por um browser.
+
+
+
+Exemplo para acessar algo COM REST:
+
+Qualquer API Client pode executar(smartphones, tablets...)
+Esse client faz uma operação de request HTTP por baixo dos panos.
+Esse Servidor recebe o request e envia o response.
+
+
+
+Um REQUEST normalmente é:
+
+GET /doc/test.html HTTP/1.1   		      ->Request Line     }
+Host: www.test101.com			}			 }
+Accept: image/gif, image/jpeg, */*	}			 }
+Accept-Language: en-us			}	Request Headers	 }	REQUEST MESSAGE HEADER (tudo acima da linha em branco)
+Accept-Encoding: gzip, deflate		}			 }
+User-Agent: Mozilla/4.0			}			 }
+Content-Length: 35			}			 }
+			<UMA LINHA EM BRANCO SEPARA O HEADER DO BODY>
+bookId=12345&author=Tan+Ah+Teck	   ->Request message body
+
+
+Um RESPONSE normalmente é:
+
+HTTP/1.1 200 OK	 	-> Status Line/StatusCode		}
+Date: Sun, 08 Feb xxxx 01:11:12 GMT	}			}
+Server: Apache/1.3.29 (Win32)		}			}
+Last-Modified: Sat, 07 Feb xxxx		}			}
+ETag: "0-23-4024c3a5"			}  Response Headers	}	RESPONSE MESSAGE HEADER (tudo acima da linha em branco)
+Accept-Ranges: bytes			}			}
+Content-Length: 35			}			}
+Connection: close			}			}
+Content-type: text/html			}			}
+			<UMA LINHA EM BRANCO SEPARA O HEADER DO BODY>
+<h1>My Home page</h1>		-> Response Message Body
+

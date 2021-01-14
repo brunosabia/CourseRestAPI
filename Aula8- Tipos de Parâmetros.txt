@@ -1,0 +1,49 @@
+Os tipos de parâmetros utilizados no REST:
+
+Path Params: 
+São parâmetros passados na URL e são OBRIGATÓRIOS, ou seja, se não forem definidos eles vão resultar em um erro de validação ou um request pra outra operação similar que usa o mesmo verbo.
+
+Imagine uma URL que nos permite recuperar uma lista de livros de 3 paginas.
+https://your_host/api/books/v1/find-with-paged-search/asc/10/1
+Essa URL tem 3 path params SORT(ascending), PAGE SIZE(10) e CURRENT PAGE(1).
+
+
+
+Query Params:
+Bem similares aos PathParams, tambem são passados via URL mas não são obrigatórios
+
+https://your_host/api/books/v1/find-by-title?firstName=Clean&lastName=Coder
+Essa URL tem Query Params depois da interrogação, definindo params de pesquisa na URL. Também seria possível pesquisar apenas o
+lastName, por exemplo. E isso só é possivel pois estes parametros são opcionais. Deixando para selecionar apenas os desejados mesmo.
+
+
+
+Header Params:
+Como o próprio nome diz, estes params são enviados no próprio Header da requisição. Estes parametros não podem ser enviados diretamente via browser. Para adicionar um Header param é necessário um client especial, como o Postman.
+No exemplo do postman:
+Accept: text/plain, application/json,text/json,application/xml,text/xml     (aceitamos como response)
+Content-Type: application/json					(tipo de conteudo do body)
+Authorization: Bearer{{bearer_token}}				(autenticação das credenciais)
+
+e é dessa forma que podemos enviar parametros para as APIs atraves do cabeçalho da requisição.
+
+
+
+Body Params:
+São muito usados na persistência de informações.
+Imagine que faremos uma request(neste caso em JSON) para efetuarmos login.
+{
+	"login": "{{user}}",
+	"accessKey": "{{password}}"
+}
+é enviado um request em qualquer formato que a api suporte(json, XML, text...)
+
+
+
+
+REVIEW:
+path e Query Params: normalmente utilizados para trazer resultados de buscas
+
+Header params, normalmente são interceptados pelo framework no qual a API foi implementada. Existem alguns default do HTTP.
+
+Body params são usados com maior frequencia para operações do tipo POST, PUT e Patch, que servem para gravação e para Updates.

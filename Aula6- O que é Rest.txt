@@ -1,0 +1,46 @@
+O QUE É REST?
+API Rest são um modelo arquitetural utilizados na integração de sistemas distribuidos na web.
+
+REpresentational State Transfer(REST) - Estado representacional de transferencia
+
+Regras do Rest:
+1- ele deve ser Cliente-Servidor
+separados
+2- o Servidor precisa ser Stateless = O servidor NÃO DEVE GUARDAR O ESTADO DO CLIENTE. Cada request de um cliente contém todas
+as informaçoes necessárias para atendê-las. 
+3- PODE SER cacheável , porém o cliente deve ser informado sobre as propriedades de cache de um recurso para decidir se deve
+ou não utilizar cache.
+4- Interface Uniforme
+	-existe uma interface uniforme entre cliente e servidor:
+		-Identificação de Recursos
+		-Manipulação de recursos a partir de suas representações
+		-Mensagens auto descritivas
+		-Hypermedia as the engine of application State(HATEOAS)
+
+5- Sistema em camadas
+	-Deve suportar conceitos como balanceamento de carga, proxies e firewalls entre o Cliente e o Servidor.
+	E a API deve tornar isso transparente para os clientes.
+
+6-Código sob Demanda(OPTIONAL e não comum)
+	é a possibilidade do cliente solicitar o código do servidor e executá-lo.
+
+
+REST suporta diversos formatos:
+
+XML
+JSON
+CSV
+Texto
+Imagens
+HTML
+PDF
+Binário
+
+
+Vantagens do WebService RESTful
+
+-REST é um padrão arquitetural muito leve, melhor ainda em limitações de banda.
+-Dev de REST é mais leve e rapido.
+-Apps mobile tem ganhado cada vez mais espaço e interagem rapidamente com servidores, o que valoriza o RESt que é mais rapido no processamento de dados das requests e responses.
+-ATUALMENTE o REST é praticamente onipresente, sendo usado pro todas as grandes empresas. Ex: Netflix,Ebay,AccuWeather,twitter,google,facebook, uber, amazon,mercado livre ... e recebem
+mais de 5bilhões de requests/dia
