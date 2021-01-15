@@ -1,0 +1,28 @@
+Verbos HTTP
+
+Pra facilitar entendimento , relacionar os verbos ao CRUD:
+
+Create = HTTP POST
+
+Read = HTTP GET
+
+Update = HTTP PUT (o PATCH pode ser usado em casos especificos)
+
+Delete = HTTP DELETE
+------------------------------------------------------------------------
+
+POST- é mais frequentemente usado na hora de criar novos recursos e inseri-los na base. Recomendado usá-lo para inserir novos registros na base da sua API.
+Em um cenário perfeito, a operação é executada, o item é add na base e a response possui Status Code 200 OK ou 201(Created).
+Suporta params via URL(Path e Query) via Header e via Body(de preferência no POST).
+
+GET- é usado para ler ou recuperar a representação de um recurso. Em um cenário perfeito, uma requisição GET retorna um XML ou JSON e um HTTP status code 200 OK.
+Em um cenário de erro, o retorno mais comum é o 404(Not Found) ou 400(Bad Request).
+Suporta parametros via URL(Path e Query) e via Header porém nao suporta params via Body.
+
+PUT- é utilizado para modificar recursos e ele é muito utilizado para atualizações(Updates). E para isso vc tem que possuir um recurso conhecido no body da requisição contendo novas informações 
+que representam o recurso original. Normalmanete retorna um status code 200 OK(ou 204(No Content) quando não retorna nenhum conteudo no body MAS por padrão é valido retornar os valores atualizados no body sim).
+Suporta params via URL(Path e Query) via Header e via Body(de preferência no PUT).
+
+DELETE - é bem simples, utilizado para deletar um recurso identificado. Em uma deleção bem sucedida pode retornar um status code 200 OK, existe a opção de um response no body com uma representação do item deletado (mas demanda muita banda) ou retornar um status code 204 No content sem response , que é recomendável.
+Suporta params via URL(Path e Query) via Header e via Body. Mas recomendável utilizar o Path Param utilizando o ID que será removido.
+

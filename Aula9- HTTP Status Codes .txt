@@ -1,0 +1,77 @@
+
+HTTP Status Codes
+
+é a forma como o API responde ao client sobre o que ocorreu durante o processamento de uma requisição
+
+-Informacionais(100-102) - pouco usados
+	100 Continue
+	101 Switching Protocols
+	102 Processing
+
+-Sucesso(200-226) - muito usados*
+	200 OK* Sua request foi processada com sucesso
+	201 Created* Foi criado com sucesso
+	202 Accepted*
+	203 Non-authoritative Information
+	204 No Content* Normalmente é retornado com deleções. Pois normalmente nao tem um retorno. (voids)
+	205 Reset Content
+	206 Partial Content
+	207 Multi-Status
+	208 Already Reported
+	209 IM Used
+
+
+-Redirecionamento(300-308)- nao sao muito usados no REST - mas usados são *
+	300 Multiple Choices
+	301 Moved Permanently*
+	302 Found
+	303 See Other
+	304 Not Modified
+	305 Use Proxy
+	307 Temporary Redirect
+	308 Permanent Redirect
+
+-Erro de Client(400-409) - muito usados*
+	400 Bad Request * quando é pedido uma requisição para uma operação que nao existe
+	401 Unauthorized * quando um request é feito para um endpoint quando nao se possui autorização
+ 	402 Payment Required
+	403 Forbidden * é retornado quando o cliente nao tem permissão no endpoint
+	404 Not Found * quando o endereço não é encontrado
+	405 Method Not Allowed *  significa que o usuário não tem permissão para acessar esse path
+	406 Not Acceptable
+	407 Proxy Authentication Required
+	408 Request Timeout
+	409 Conflict * Um objeto já foi criado com as mesmas informações, por exemplo.
+	410 Gone
+	411 Length Required
+	412 Precondition Failed
+	413 Payload too Large
+	414 Request URL Too Long
+	415 Unsupported Media Type
+	416 Request Range Not Satisfiable
+	417 Expectation Failed
+	418 I'm a teapot
+	421 Misdirected Request
+	422 Unprocessable Entity
+	423 Locked
+	424 Failed Dependency
+	426 Upgrade required
+	428 Precondition Required
+	429 Too Many Requests
+	431 Request Header Fields Too Large
+	444 Connection Closed without Response
+	451 Unavailable For Legal Reasons
+	499 Client Closed Request
+
+
+-Erro de Server(500-599) - muito usados*
+	500 Internal Server Error* normalmente é retornado de forma genérica - pode ser um timeout em uma query do banco, erro de execução no server.
+	501 Not Implemented
+	502 Bad Gateway
+	503 Service Unavailable
+	504 Gateway Timeout
+	505 HTTP Version Not Supported
+	506 Variant Also Negotiates
+	507 Insufficient Storage
+	508 Loop Detected
+	510 Not Extended
