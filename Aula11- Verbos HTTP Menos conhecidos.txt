@@ -1,0 +1,17 @@
+VERBOS HTTP MENOS CONHECIDOS e menos usados, mas que merecem ser estudados.
+
+PATCH
+Pode ser usado para realizar updates parciais de um recurso, por exemplo, quando você precisa altera apenas um campo em um recurso, executar um POST com todo o objeto é pesado e acarretaria em um consumo maior de banda, então o Patch é uma opção valida.
+POREM, use com moderação, pois colisões entre multiplas PATCH requests são mais perigosas que colisões entre PUT requests, por que exige que o cliente tenha informações basicas do recurso ou irão corrompe-lo.(é raro, mas pode acontecer)
+
+HEAD
+é bem similar ao verbo GET, exceto pelo fato do servidor retornar apenas  uma responde de header sem um entity body.
+
+TRACE
+É usado para recuperar o conteudo de uma requisição HTTP de volta, podendo ser usado com o propósito de debug durante o processo de dev.
+
+OPTIONS
+É usado pelo cliente para encontrar e listar as operações HTTP e outras opções suportadas pelo servidor.
+
+CONNECT
+É usado pelo cliente para estabelecer uma conexão de rede com um servidor via HTTP.

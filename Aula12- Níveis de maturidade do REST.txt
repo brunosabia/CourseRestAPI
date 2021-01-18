@@ -1,0 +1,23 @@
+O QUE É REST E O QUE É RESTFUL?
+
+REST possui 4 niveis de maturidade incrementais.
+
+nivel 0- Pantano de XML
+	Um sistema totalmente basico e simples que utiliza HTTP.
+	exemplo: Um sistema de oficina com CRUD de clientes.
+
+nivel 1- Recursos
+	Um sistema com as informações organizadas por recursos
+	exemplo:O sistema da oficina agora tem CRUD de clientes,fornecedores, ordens de serviço porém tudo sem a preocupação de utilizar os verbos corretos.
+
+nivel 2- HTTP Verbos
+	Um sistema com informações organizadas por recursos e o uso correto dos verbos.
+
+nivel 3- Hypermedia Controls (HATEOAS)
+	Um sistema com informações organizadas por recursos e o uso correto dos verbos E ainda os controles por links, por exemplo, links do wikipedia, que redirecionam para outras paginas do wikipedia explicando do assunto que era link, ou entao uma lista de usuários, que são links para uma pagina de informações desse usuário.
+
+
+
+
+
+RESTFUL- é o estado MAIS ALTO do REST. Quando ele alcança todos esses níveis de maturidade.
