@@ -1,0 +1,8 @@
+HATEOAS
+
+Hypermedia As The Engine Of Application State (HATEOAS)
+
+É uma constante arquitetural de apps REST. 
+Uma API HATEOAS provem informações que permite navegar entre endpoints de forma dinamica.
+
+Exemplo do Wikipedia. uma pagina te disponibiliza varios hyperlinks para outras informações.

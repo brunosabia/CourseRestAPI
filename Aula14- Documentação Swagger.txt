@@ -1,0 +1,17 @@
+FRAMEWORK SWAGGER
+
+é um dos frameworks mais usados para documentar APIs REST.
+Ele facilita que os desenvolvedores dos cliente consumam sua API informando quais os parametros que as operações suportam, qual o retorno, qual o  modelo retornado (JSON, XML, CSV, Binário...).
+É uma forma de deixar a implementação da API em outros sistemas muito mais rapida e eficiente, sem precisar necessariamente da ajuda da equipe que desenvolveu a API em primeiro lugar.
+Por facilitar tanto, é muito usado e valorizado.
+
+O SWAGGER inicialmente surgiu como um Framework de documentação de APIs e acabou se tornando Open API Initiative.
+em outras palavras ele virou um PADRÃO DE DOCUMENTAÇÃO DE APIs.
+De certa forma é visto como um passo adicional dentre os niveis de maturidade do REST, para tornar seu API RestFul.
+
+Se o SWAGGER for aplicado da forma correta, a propria API vai se documentando e se manterá atualizada.
+
+
+
+
+Se comporta igual ao WSDL das aplicações SOAP.

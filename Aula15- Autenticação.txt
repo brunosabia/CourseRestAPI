@@ -1,0 +1,85 @@
+Sua API vai precisar de uma autenticação e autorização.
+
+Para uma API basica é incentivado o uso da JWT(JSON Web Token).
+
+
+
+CLIENT ----> passa as credenciais(POST) -----> API SERVER
+
+
+
+CLIENT <---- devolve um token no body 200 OK <----- API SERVER
+
+
+Após isso, o cliente armazena o token e nas proximas requisições sempre envia o token via header em um parametro chamado Authorization.
+Por exemplo, o cliente quer abrir seu profile:
+
+
+CLIENT ---->                  GET/Profile                      -----> API SERVER
+               authorization: Bearer eyJhbGhCiOiJUhYXxcSR...
+
+SE O TOKEN FOR VALIDO:
+
+CLIENT <---- Profile e 200 OK <----- API SERVER
+
+SE NÃO FOR VALIDO
+
+CLIENT <---- Unauthorized 401 <----- API SERVER
+
+
+
+Este token possui um tempo de expiração e precisa ser setado para o token funcionar propriamente.
+Existe também o refresh token, que disponibiliza atualizar o token mesmo ele tendo expirado. É mais seguro pois evita o trafego das credenciais pela rede.
+
+Exemplo de um JWT:
+
+Criptografado:
+
+         (Header)                                        (Payload)                                                      (VerifySignature)
+eyJhGci0iJIUz1NiSiNr5cCI6IkpXVCJ9.eyJzdWiiOiIIXmJM03ODkwIUiwibmFtzSI6Ikpva64grG9lIiwiaWf01joxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2Qt4fwpMEJf36POk6yJV_adQssw5c
+
+
+
+Header:
+
+	{
+	   "alg" : "HS256",
+	   "typ" : "JWT"
+	}
+
+
+Payload(onde ficam as informações):
+	{
+	  "sub": "1234567890",
+	  "name": "John Doe",
+	  "iat" : 1516239022
+	}
+
+Verify Signature:
+HMACSHA256(
+	base64UrlEncode(header) + ","+ 
+	base64UrlEncode(payload),
+	your-256-bit-secret
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
