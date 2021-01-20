@@ -1,0 +1,14 @@
+Caso você venda acessos de sua API:
+
+Implementar limitação de requisições e acesso por um plano de assinatura.
+
+Como deixar sua API mais DEV Friendly??
+	-Criar um SDK(Software Development Kit)! Android SDK, Java SDK. Onde você simplesmente disponibiliza a sua biblioteca para ser importada pelo client , tornando muito mais facil de importar.
+	Porém uma desvantagem é que o SDK deve ser atualizado frequentemente.
+
+	-Referencias Rapidas	
+	Cria um guia de referencia e nele descrever em frases cada endpoint ou função da sua API.
+	Sample codes.
+
+	-Criar um sandbox para seus clientes poderem testar o que sua API faz. * caso planeje vender sua API*
+	 Utilizando um MOCK API server.

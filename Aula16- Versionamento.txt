@@ -1,0 +1,28 @@
+VERSIONAMENTO fundamental
+ 
+	é a capacidade de adicionar, modificar e remover funcionalidades da sua API SEM MEXER NA INTERFACE E QUEBRAR OS SEUS CLIENTES.
+	o REST foi criado para ser capaz de ser atualizado e por esta vez, versionado tb.
+
+	Um exemplo comum é uma alteração tributária que te obriga a alterar a sua aplicação.
+
+
+Existem duas formas mais usadas para versionar suas API's:
+
+VERSIONAMENTO POR URL:
+		-Sub Dominio -> vc especifica a versão logo no inicio da URL(o v1)
+			ex:https://v1-your_host/api/books/find-with-paged-search/asc/10/1
+		
+		-Path Param -> vc especifica após a URL base(v1) *das mais utilizadas* 
+			ex:https://your_host/api/books/v1/find-with-paged-search/asc/10/1
+
+		-QueryString ->  vc especificava como uma pesquisa *caiu em desuso*
+			ex:https://your_host/api/books/find-with-paged-search/asc/10/1?version=1.0
+
+
+VERSIONAMENTO POR HEADER:
+		-HTTP content type -> é a forma mais correta de versionar APIs
+
+		-Custom Header Param -> é criado um header param apenas para setar a versão da API.
+
+
+O ponto positivo do versionamento por Header é que a sua URL é mantida clean. E o ponto negativo é que torna a requisição do client mais complexa. Pois adiciona um Param que será exigido para o client, no caso um param indicando a versão desejada.
