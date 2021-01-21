@@ -1,0 +1,56 @@
+BOAS PRATICAS
+
+1- paginar a sua API
+	-é interessante paginar os resultados de pesquisas. Facilita manipular o XML ou JSON do client além de diminuir o trabalho do BD.
+
+2- FILTRAGEM
+	- evitar listas completas por padrão e deixar o cliente requisitar os filtros para pesquisas.
+
+3-Definir Recursos lógicos
+	- Separar bem os recursos para cada entidade é sempre a melhor opção.
+
+4- Tolerância a falhas
+	-Basicamente tratamento de erros, a aplicação tem que conseguir responder ao cliente o problema.	
+
+5- Cache
+	- O uso do cache para evitar as requisições desnecessárias ao seu servidor.
+
+6- Conectividade
+	- Sempre facilitar a conexão com a sua API.
+
+7- Timeouts
+	- FUNDAMENTAL que seu client nao fique tempo demais consumindo recursos do seu servidor. Definir timeouts é a melhor forma de resolver este problema.
+
+8- Documentação
+	- Busque prover a melhor documentação possivel para sua API. (Swagger, HATEOAS)
+
+9- Utilizar protocolo SSL (Secure Sockets Layer) / TLS (Transport Layer Security)
+	- Para prover mais seguranca pra sua API.
+
+10- Versionamento
+	- torna a manutenção da sua API muito mais simples.
+
+11- Teste e validação
+	- buscar automatizar os testes.
+
+12- Self-Service
+	- Os proprios clients conseguem acessar e escolher o que eles precisam para consumir a API. (O swagget e HATEOAS ajudam nisso). Pois provem informações do tipo de objetos e os links para onde ele será redirecionado.
+
+13- Exportações
+	- É interessante que a sua API ofereça a exportação de arquivos pra alguns formatos.
+
+14-I18N / Globalization
+	- Dependendo da linguagem, os nomes mudam , mas é basicamente Internacionalização.
+
+15- Notificações
+	- por exemplo. em vez de deixar um usuário preso esperando um download ou exportação acabar, apenas notifica-lo quando o download foi concluido ou o link para baixar foi enviado por email. algo similar.
+
+16- Limitar a quantidade de campos
+	- Uma pesquisa de clientes com 15 opções de pesquisa, mas em cada request ele só pode usar 5. (pode ser feito com o Query params, por exemplo)
+
+17- Monitore sua API
+	- Veja onde vc pode melhorar sua API, endpoints que exigem muito, procurar os gargalos.
+
+18- Selecione as tecnologias mais adequadas
+	- Escolha bem a tecnologia que melhor se aplica para a sua situação. ( a melhor tecnologia nem sempre é a mais moderna)
+
