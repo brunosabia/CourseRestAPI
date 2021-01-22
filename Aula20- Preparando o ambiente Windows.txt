@@ -1,0 +1,11 @@
+Download do JAVA Development kit.
+
+	- copiar o path de instalação (C:/Arquivos de programas/Java/java<versao>)
+
+	- botao direito no "Meu computador" -> propriedades -> Configurações avancadas do sistema -> Variáveis de ambiente -> adicionar uma nova variável DO SISTEMA -> chamada "JAVA_HOME" com o valor = path de instalação demonstrado acima -> procurar a variável do sistema "Path"-> Adicionar um novo valor "%JAVA_HOME%\bin"
+
+
+
+	- para testar, vá até o cmd e digite "java -version" ou "javac -version"
+
+o numero da versão deve ser o numero da versão do Dev.Kit instalado
