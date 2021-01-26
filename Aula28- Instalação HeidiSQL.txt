@@ -1,0 +1,8 @@
+Esse DB funciona como um client para o MariaDB, MySQL, MSSQL e PostgreSQL
+
+Download normal
+
+Executar
+
+Tudo Default
+

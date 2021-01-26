@@ -1,0 +1,3 @@
+instalar MySQL Server simples, 
+
+Authentication Legacy, pois a outra pede connectors adicionais com plugins que torna a conexão mais segura porem muito mais complicada. Para um ambiente de development, apenas Legacy está ótimo.

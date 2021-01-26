@@ -1,0 +1,7 @@
+Só instalar a versão completa do MySQL Workbench.
+
+Instalar e abrir a instancia
+
+senha padrão é "admin123"
+
+é um DB mais pesado, caso o hardware seja muito fraco, recorrer ao HEIDI SQL (Prox aula)

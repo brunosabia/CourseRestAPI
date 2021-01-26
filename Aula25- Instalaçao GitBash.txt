@@ -1,0 +1,7 @@
+Download GitBash
+
+ Instalação-
+
+	Utiliza comandos em UNIX no console
+
+de resto default.
