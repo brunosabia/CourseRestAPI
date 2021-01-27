@@ -1,0 +1,29 @@
+Download Docker
+
+executar o exe.
+
+Precisei executar alguns comandos no powershell as admin
+
+como:
+
+Step 1 - Enable the Windows Subsystem for Linux
+	dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+Step 2 - Check requirements for running WSL 2
+	To update to WSL 2, you must be running Windows 10.
+
+Step 3 - Enable Virtual Machine feature
+	dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+Step 4 - Download the Linux kernel update package
+	https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+Step 5 - Set WSL 2 as your default version
+	wsl --set-default-version 2
+
+Step 6 - Install your Linux distribution of choice
+	Eu escolhi Ubuntu 20.04 LTS
+	mas existem varias opcoes.
+	
+
+CONGRATULATIONS! You've successfully installed and set up a Linux distribution that is completely integrated with your Windows operating system!

@@ -1,0 +1,16 @@
+Java SDK 11
+
+Maven
+
+IDE Eclipse
+
+Gitbash
+
+MySQL
+
+HeidiSQL
+
+Postman
+
+Docker
+
