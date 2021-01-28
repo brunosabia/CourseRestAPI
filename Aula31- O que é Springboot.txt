@@ -1,0 +1,29 @@
+É uma forma de facilitar o desenvolvimento com o framework Spring, facilita muito.
+Torna desnecessário o uso do Tomcat, Jet, JBoss... para subir sua aplicação. Ele já faz isso de forma bastante simples.~
+
+Para inicializar sua aplicação:
+	-Spring Initializr
+	https://start.spring.io/
+
+
+
+	Maven Project
+
+	Java
+
+	Version default
+
+	Group : br.com.erudio
+
+	Artifact: rest-with-spring-boot-udemy
+
+	Packaging: Jar
+
+	Java Version: 11
+
+
+	GENERATE!
+
+
+
+só importar a pasta gerada para o eclipse.
