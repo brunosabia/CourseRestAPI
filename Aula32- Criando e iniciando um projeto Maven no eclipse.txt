@@ -1,0 +1,128 @@
+Criando o projeto no eclipse, apontar o eclipse para uma pasta de workspace, editar o arquivo "pom.xml" que fica na pasta raiz do projeto (no caso o pom ficou assim):
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+  	<version>2.1.3.RELEASE</version>
+  	
+  </parent>
+  
+  <groupId>br.com.erudio</groupId>
+  <artifactId>rest-with-springboot-udemy</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  	<java.version>11</java.version>
+  </properties>
+  
+<dependencies>
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-data-rest</artifactId>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-test</artifactId>
+  		<scope>test</scope>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  	</dependency>
+  	
+</dependencies>
+  
+  
+ <build>
+ 	<plugins>
+ 		<plugin>
+ 			<groupId>org.springframework.boot</groupId>
+ 			<artifactId>spring-boot-maven-plugin</artifactId>
+ 		</plugin>
+ 	</plugins>
+ </build>
+</project>
+
+
+
+
+após editar o pom.xml, criar um pacote na pasta src chamado Startup, digitar "@SpringBootApplication" *(caso sua aplicação use o SpringBoot) e pressionar ctrl + Shift + o (ele vai importar a dependencia correspondente)
+
+
+dentro da classe Startup, digitar "main" e pressionar ctrl + espaço para completar o método main
+
+
+
+E para criar Gets, Sets e construtores no eclipes : Alt + SHIFT + S
+
+
+Após criar a classe Startup, criamos a classe Greeting.java, no mesmo package. com o seguinte código:
+
+package br.com.erudio;
+
+public class Greeting {
+
+	private final long id;
+	private final String content;
+	
+	public Greeting(long id, String content) {
+		
+		this.id = id;
+		this.content = content;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public String getContent() {
+		return content;
+	}
+}
+
+
+
+por fim, após adicionar a classe Greeting, criamos, no mesmo package a classe GreetingController.java:
+
+
+package br.com.erudio;
+
+import java.util.concurrent.atomic.AtomicLong;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+//para o rest reconhecer a classe como um controller é necessário colocar o seguinte código:
+@RestController
+public class GreetingController {
+
+		private static final String template = "Hello, %s!";
+		private final AtomicLong counter = new AtomicLong();
+		
+		//Para o rest reconhecer o método como um Endpoint, colocar o seguinte código
+		@RequestMapping("/greeting")
+		public Greeting greeting(@RequestParam(value="name", defaultValue = "World")String name) {
+			return new Greeting(counter.incrementAndGet(),String.format(template, name));
+			
+		}
+		
+}
+
+
+
+para testar essa classe, no navegador:
+
+http://localhost:8080/greeting?name=Bruno
+
+ou
+
+http://localhost:8080/greeting
