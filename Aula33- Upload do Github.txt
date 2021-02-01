@@ -1,0 +1,16 @@
+Seguindo o padrão de 
+
+git status
+
+git add .
+
+git commit -m "mensagem"
+
+git push
+
+exit
+clear
+
+
+
+Lembrando que o arquivo .jar gerado pelo eclipse normalmente nao é commitado pois em uma dev de equipe , esse arquivo é gerado a cada compilação. O que além de inflar o repositório, pode causar conflitos.
