@@ -1,0 +1,34 @@
+ Para dar continuidade ao projeto e manter o passo a passo, a cada aula:
+
+copiar a pasta do projeto da aula anterior, exemplo:
+
+01 RestWithSpringBootUdemy Scaffold Eclipse
+
+
+e renomear para 
+
+02 RestWithSpringBootUdemy Scaffold Calculator
+
+entrar na pasta criada e apagar os arquivos:
+
+/.settings
+/target
+.classpath
+.project
+.gitignore
+
+pois esses arquivos serão recriados no momento da importação para o eclipse.Menos o gitignore, porem provavelmente já havera um 
+gitignore na pasta acima com os outros projetos que já englobará esta pasta.
+
+
+
+comments da aula:
+//o @RequestParam que estamos fazendo aqui é opçional, um Query Param, que já aprendemos anteriormente.
+// https://localhost:8080/greeting?name=Bruno   (QueryParam)
+
+
+//vamos substituir o @RequestParam por um @PathVariable, que torna a passagem de um param obrigatória, removendo a necessidade de um Default Value
+
+//é necessario tambem alterar o @RequestMapping . é necessario designar o value e declarar o verbo do tipo GET. quando não é especificado, por padrão, o verbo GET é atribuido.
+
+//Para organizar as importações  pressione Ctrl + Shift + O

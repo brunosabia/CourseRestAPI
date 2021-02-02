@@ -1,0 +1,11 @@
+Basicamente uma aula explicando a soma entre dois numeros passados por parametros obrigatórios.
+
+é criado o método isNumeric, para garantir que os params sejam numeros.
+
+é criado o método convertToDouble para converter a soma dos 2 numeros em double.
+mas não são implementados
+
+
+para renomear a classe , arquivo e métodos, se desejar
+
+selecionar o nome da classe e pressionar Alt + Shift + R
