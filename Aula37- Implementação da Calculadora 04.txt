@@ -1,0 +1,21 @@
+TRATAMENTO DOS ERROS
+
+criamos dentro do projeto>src>br.com.erudio> CRIAMOS UM PACOTE AQUI CHAMADO: br.com.erudio.exception
+
+neste pacote criamos a classe: ExceptionResponse.java
+
+criamos uma classe de exception meio que padrão. 
+
+E agora criamos a UnsupportedMathOperationException.java no mesmo package.
+
+nesta classe adicionamos logo antes do nome da classe:
+
+@ResponseStatus(HttpStatus.BAD_REQUEST) 
+
+e esta classe UnsupportedMathOperationException.java vai extends RuntimeException do java.lang
+
+
+
+
+@ControllerAdvice é usado para concentrar um certo tipo de ação no sistema, algo como um tratamento genérico global. No caso das exceções sempre que não houver um tratamento mais adequado já aplicado de forma programática então é aplicado o que está no @ControllerAdvice
+
