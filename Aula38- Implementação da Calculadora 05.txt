@@ -1,0 +1,20 @@
+Nesta aula nós adaptamos o código de soma para
+Subtração
+Multiplicação
+Divisão
+Média
+Raiz Quadrada
+,
+
+em seguida ele pediu para reorganizarmos as informações, estava tudo na MathController.
+
+O que eu fiz:
+
+criei um pacote mathServices, e nele coloquei todas as operações matemáticas e os métodos de validação (static para nao precisar ser instanciado).Mas então era só instanciar a classe com os parametros corretos e chamar o método da operação desejada.
+
+Na controller eu apenas instancio a classe operations passando os params e chamo a operação desejada como retorno.
+
+Em seguida mudei o controller de lugar, para o pacote controllers apenas para organização.
+(botao direito na classe, "Refactor", "Move")
+
+Calculadora completa.
