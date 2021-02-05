@@ -1,0 +1,47 @@
+(aula 05 RestWithSpringBootUdemy Scaffold CRUD Person)
+Nesta aula comecaremos criando o pacote model. com a classe "Person" 
+
+Com os seguintes attributes:
+
+	private static final long serialVersionUID = 1L; //pq esta classe implements Serializable
+	
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private String address;
+	private String gender;
+
+(Utilize o alt+shift + S para criar os getters, setters, contructors...)
+esses attributes possuem os getters e setters (menos o serialVersionUID) e os metodos equals e Hashcode
+
+
+agora criar o package services e nele a classe "PersonService"
+Essa classe tem o annotation antes da declaração da classe:
+@Service    
+
+//essa annotation serve para o SpringFramework cuide da injeção de dependencia dessa classe, sempre que necessário sem precisar instanciar essa classe ou sem precisar declará-la como static
+
+na classe PersonService implementamos o método "findById(id)"
+que nesse caso irá setar valores para um objeto person e retornar esse objeto
+
+Pacote de controllers:
+PersonController.java >>> nesta classe iremos utilizar os annotations:
+
+@RestController
+@RequestMapping("/Person") //antes do nome da classe
+
+e na hora de fazer a injeção de dependencias do metodo services, em vez de instancia-lo, o Spring framework permite 
+que vc utilize o annotation @Autowired sobre a classe que deseja utilizar por ex:
+
+		@Autowired
+		private PersonService services;
+
+o método principal da controller nesta aula é o :
+
+				//annotations
+				@RequestMapping(value="/{id}",
+				method=RequestMethod.GET,
+				produces = MediaType.APPLICATION_JSON_VALUE)  
+		public Person findById(@PathVariable("id")String id){
+			return services.findById(id);//retornando a soma	
+		}

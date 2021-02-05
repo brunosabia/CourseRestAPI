@@ -1,0 +1,2 @@
+Até agora aprendemos principalmente o verbo GET. Pois é o unico que pode ser acessado diretamente pelo browser.
+os verbos Put, Post e Delete precisam de outra ferramenta, no caso, o Postman.
