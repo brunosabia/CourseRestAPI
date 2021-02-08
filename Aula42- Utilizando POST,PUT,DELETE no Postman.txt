@@ -1,0 +1,43 @@
+
+
+Pasta da AULA 6 
+
+Nesta aula criamos o método Create que utiliza o verbo POST, consome um JSON e produz um JSON. ele recebe um person pelo body do request e retorna um Json dessa person. 
+(por ser apenas um mock server nao existe a conexão com o BD ainda.)
+
+O MOTIVO do Postman ser utilizado é pq ele nos dá a opção de fazer o envio do body JSON diretamente, em vez de obrigar a criar uma interface que retorne esses inputs, além de verificar os Status retornados.
+
+neste primeiro exemplo:
+POST http://localhost:8080/person
+
+Body
+raw   JSON
+
+{
+    "firstName": "Gabriela",
+    "lastName": "Sabia",
+    "address": "SP",
+    "gender": "female"
+}
+
+ e enviar. 
+
+
+o update/PUT é bem similar ao Create/POST, neste caso do update, a principal diferenca é que ao enviar o Obj que vc deseja fazer o update é imprescindível o envio do id junto:
+
+
+
+{
+    "id": 5,
+    "firstName": "Gabriela",
+    "lastName": "Silva",
+    "address": "SP",
+    "gender": "female"
+}
+
+
+ele identifica o Id, vai até o objeto e sobrescreve como se fosse criado novamente.
+
+
+JÁ O DELETE
+ mais simples ainda, é um método void que similar ao findById, vai até o Id passado ao queryParam como URL e deleta o obj armazenado.

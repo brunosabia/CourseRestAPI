@@ -1,0 +1,6 @@
+Nesta aula basicamente criamos um findAll em services com um "for" com 8 loops criados com objs Person em cada e armazenamos em um Array. 
+
+Retornamos este array para o controller que exibe pra tela, e por nao especificarmos o value do mapping, ele retornará direto a lista no: http://localhost:8080/person
+
+
+PARA FICAR MAIS FACIL DE VISUALIZAR RETORNOS DE JSON NO BROWSER, UTILIZE A EXTENSÃO JSON VIEW do chrome, facilita o entendimento.
