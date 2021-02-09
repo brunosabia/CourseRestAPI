@@ -1,0 +1,4 @@
+Nesta aula o desafio foi voltar na aula 04 RestWithSpringBootUdemy Scaffold Calculator - Other Operations
+
+e realizar ajustes no código para que os métodos statics e as dependencias não precisassem ser instanciadas. 
+Se aproveitando da dupla @Service e @Autowired do Springboot, que fazem a injeção das dependencias de forma automática.

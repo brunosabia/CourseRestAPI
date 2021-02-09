@@ -1,0 +1,47 @@
+Nesta aula, de uma forma meio complexa o que foi feito foi:
+
+
+Foi criado um novo schema chamado "rest_with_spring_boot_udemy"
+no BD (Eu utilizei o MySQL diretamente e ele o Heidi para conversar com o MySQL)
+Ativei o MySQL pelo MySQL Notifier
+Abri o workbench e lá criei o schema "rest_with_spring_boot_udemy" no endereço: localhost:3306
+
+após isso, fomos até o projeto da aula "08 RestWithSpringBootUdemy Scaffold Creating Database"
+e lá na pasta:
+src/main/resources 
+
+botao direito, New > Other > General > File> nomeamos de "application.properties" e criamos esse file.
+
+dentro desse file colocamos (# significa comments):
+
+
+
+
+spring.datasource.driverClassName=com.mysql.cj.jdbc.Driver 
+# na linha acima descrevemos o driver do mysql que será utilizado
+
+spring.datasource.url=jdbc:mysql://localhost:3306/rest_with_spring_boot_udemy?useTimezone=true&serverTimezone=UTC
+#na linha acima definimos a nossa URL do jdbc do localhost e definimos configs do timezone do server
+
+spring.datasource.username=root
+spring.datasource.password=computer
+#login do db
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+#Aqui vc define o hibernate dialect - InnoDB possuo um desempenho levemente pior que o Default, porém ele tem as vantagens de lidar com as chaves estrangeiras
+
+spring.jpa.hibernate.ddl-auto = update
+#quando vc alterar o seu modelo, ele vai update no seu db (opcoes: create, update, create-drop)
+
+spring.jpa.show-sql=false
+#para nao mostrar o db gerado pelo hibernate
+
+
+
+
+
+
+
+
+
+estas linhas acima já possibilitam a conexão com o MySQL
