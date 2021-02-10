@@ -1,0 +1,68 @@
+09 RestWithSpringBootUdemy Scaffold Entities and Repository
+
+A principio temos que adicionar mais uma dependencia no "pom.xml" na raiz do projeto:
+
+Para permitir o uso do Hibernate adicionamos: 
+<dependency> 				
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+
+e tambem precisamos adicionar o driver de conexão/connector do MySQL:
+ 
+<dependency>
+<groupId>mysql</groupId>
+<artifactId>mysql-connector-java</artifactId>
+</dependency>
+
+
+
+
+Pode ser adicionado em cada uma dessas dependencias uma versão para cada uma, porém, neste caso a versão esta sendo herdada do <parent> lá de cima, que por ser a versão STARTER já possui versoes pré configuradas pro MySQL , JPA...
+
+O Hibernate falando de forma mais grosseira significa que cada model/entidade equivale a uma tabela do BD deste model/entidade.
+
+
+Criando a Entity:
+Ao chegar na classe que será uma entidade, adicionar o @Entity  como annotation na classe. Importar do JAVAX.PERSISTANCE. O import do org.hibernate.annotations esta caindo em desuso. Com esse annotation dizemos ao Hibernate que essa classe representa uma tabela de dados.
+
+Em seguida , por alguns SO nao entenderem muito bem letras maiusculas ou minusculas é comum utilizar o @Table(TAMBEM DO JAVAX.PERSISTANCE) para garantir que a tabela será criada com um nome específico , entao logo abaixo do @Entity, adicionamos:
+@Table(name="person")
+
+depois disso, para as variáveis utilizamos as seguintes annotations:
+
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // significa que o Hibernate vai se responsabilizar pela geração dos Ids
+	private Long id;
+	
+	@Column(name = "first_name", nullable = false, length = 80) //cria uma coluna com o nome first_name que nao pode ser null
+	private String firstName;
+	
+	@Column(name = "last_name", nullable = false, length = 80)
+	private String lastName;
+	
+	@Column(nullable = false, length = 100)	//cria uma coluna com o mesmo nome da variável
+	private String address;
+	
+	@Column(nullable = false, length = 6) //limita a quantidade de caractéres que podem ser add
+	private String gender;
+
+
+
+
+
+
+
+
+
+
+
+
+E por final, adicionamos um novo pacote chamado br.com.erudio.repository e dentro dele criamos uma interface que se chama PersonRepository. com o annotation @Repository do springframework.stereotype
+
+esta inteface tb irá extender o JpaRepository<OBJETO(Neste caso "Person"), Tipo do ID(chave primária, no caso "Long")>
+
+
+
