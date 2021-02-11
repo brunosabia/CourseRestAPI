@@ -1,0 +1,30 @@
+10 RestWithSpringBootUdemy Scaffold Services
+
+Nesta aula utilizamos principalmente o repository na classe PersonService.java
+
+
+para o CRUD da Person, utilizamos o :
+
+CREATE-
+repository.save(obj);
+
+READ-
+repository.findAll();
+ou
+repository.findById();
+
+UPDATE-
+repository.findById();
+seguido de 
+repository.save(obj);
+
+DELETE-
+
+repository.delete(obj);
+
+
+
+PESQUISAR SOBRE SpringData e suas funcoes.
+restaram updates a ser feitos na classe controle para a proxima aula
+
+
