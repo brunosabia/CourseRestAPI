@@ -30,9 +30,9 @@ public class PersonService {
 	}
 	
 	public Person update(Person p) {
-		repository.findById(p.getId()).orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
 		
-		Person entity = new Person();
+		Person entity = repository.findById(p.getId()).orElseThrow(() -> new ResourceNotFoundException("No records found for this ID"));
+		
 		entity.setFirstName(p.getFirstName());
 		entity.setLastName(p.getLastName());
 		entity.setAddress(p.getAddress());
