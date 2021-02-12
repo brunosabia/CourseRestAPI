@@ -1,0 +1,19 @@
+11 RestWithSpringBootUdemy Scaffold Updating Controller
+
+
+
+Até agora utilizamos Annotations no controller que, por atualizacoes no springboot, já se tornaram desnecessárias, nesta aula limpamos o código:
+
+@RequestMapping(method=RequestMethod.GET,
+				produces = MediaType.APPLICATION_JSON_VALUE)
+
+no caso do GET,em vez de utilizar o @RequestMapping, o @GetMapping declara que é GET
+não é necessário utilizar o produces = "...JSON" pq  por convenção ele faz automaticamente
+
+@PutMapping
+
+@PostMapping
+
+@DeleteMapping
+
+todos estes substituem a opção mais complexa que estava sendo usada até então

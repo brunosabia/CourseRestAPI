@@ -1,0 +1,11 @@
+Basicamente o que foi feito no Controller foi ajustar os pathvariables de String id para Long id.
+
+Em seguida testamos no Postman as funcionalidades da API,
+
+GET  no link inicial retornando a lista de persons = read
+
+POST do JSON de um user SEM O ID  = create
+
+PUT do JSON com um id ja existente = update
+
+DELETE informando o id = delete
