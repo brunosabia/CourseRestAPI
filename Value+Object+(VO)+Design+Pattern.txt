@@ -1,0 +1,2 @@
+https://martinfowler.com/eaaCatalog/dataTransferObject.html
+https://martinfowler.com/bliki/ValueObject.html
