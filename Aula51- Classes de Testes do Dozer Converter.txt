@@ -1,0 +1,19 @@
+12 RestWithSpringBootUdemy Scaffold Implementing VO
+
+
+Para realizar o teste, abra a src/test/java e crie um package lá dentro com o mesmo nome do package principal do converter, br.com.erudio.converter
+e crie uma classe lá dentro chamada 
+
+DozerConverterTest
+
+(não foi detalhado o conteudo dessa classe que esta na file: 0904+Creating+DozerConverter+Tests+-+DozerConverterTest.txt)
+
+e dentro do src/test/java tambem criamos o package br.com.erudio.converter.mocks
+com a classe Mock Person dentro
+(conteudo da classe na 0904+Creating+DozerConverter+Tests+-+MockPerson.txt)
+
+
+não é detalhado muito bem o teste, porém oque eu entendi foi que ele basicamente criou a DozerConverterTest para chamar os métodos parseObject e parseListObjects da classe DozerConverter e comparar os conteudos com as listas e objs que ele criou no MockPerson
+
+
+

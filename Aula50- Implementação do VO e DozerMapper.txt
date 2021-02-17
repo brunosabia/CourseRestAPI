@@ -1,0 +1,54 @@
+12 RestWithSpringBootUdemy Scaffold Implementing VO
+
+Primeiramente copiamos a classe do model(no caso Person.java) e criamos o package br.com.erudio.data.vo . Colocamos a classe copiada nesse pacote e renomeamos para PersonVO.java.
+
+Removemos as annotations do hibernate na PersonVO
+Recriamos o Equals() e HashCode()
+
+renomeamos o package do model para
+br.com.erudio.data.model
+
+Agora vamos ajustar o controller
+pelo Ctrl+F e alterar os retornos e parametros de Person para PersonVO
+
+Agora vamos adicionar no pom.xml do project uma dependencia, o DozerMapper.
+
+o Dozer facilita na questão de setar os dados de um objeto VO para um Obj da sua applicação.
+
+https://github.com/DozerMapper/dozer
+
+
+<dependency>
+    <groupId>com.github.dozermapper</groupId>
+    <artifactId>dozer-core</artifactId>
+    <version>6.5.0</version>
+</dependency>
+
+
+APÓS essa implementação, criamos o pacote
+br.com.erudio.converter com a classe Dozer Converter.java
+
+nesta classe criamos o código:
+
+private static Mapper mapper = DozerBeanMapperBuilder.buildDefault();
+
+	public static<O, D> D parseObject(O origin, Class<D> destination) {
+		return mapper.map(origin, destination);
+	}
+
+
+este metodo segue um padrão simples pra retorno DE UM OBJ SIMPLES. NÃO FUNCIONA COM LISTA.
+
+
+
+
+agora o método que funciona com LISTA:
+
+
+public static<O, D> List<D> parseListObjects(List<O> origin, Class<D> destination) {
+		List<D> destinationObjects = new ArrayList<D>();
+		for(Object o : origin) {
+			destinationObjects.add(mapper.map(o, destination));
+		}
+		return destinationObjects;
+	}
