@@ -28,6 +28,7 @@ Controller envia o response com um VO.
 
 
 
+
 Além disso, o VO permite que as informações passadas pelo client sejam organizadas de forma diferente
 por exemplo, em um obj Person, preenchido pelo client, o Client pode digitar o nome completo e preencher uma variável NAME
 e o VO pode pegar essa mesma variavel e pelas regras de negócio , separar essa variavel em FirstName e LastName
