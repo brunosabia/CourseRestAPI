@@ -1,0 +1,25 @@
+13 RestWithSpringBootUdemy Scaffold Adjusting Services and Controller for VO
+
+
+Primeiro passo é ajustar o Services substituindo os Persons por PersonVO.
+
+
+depois basicamente utilizamos a lógica de realizar conversoes de VO para entity:
+
+
+var entity = DozerConverter.parseObject(person, Person.class);//recebe o param VO e transforma em entity
+
+
+
+e na hora de retornar converter de volta para VO:
+
+
+return DozerConverter.parseObject(repository.save(entity), PersonVO.class);
+
+
+
+
+Até agora nao ficou muito claro os beneficios do padrão de projeto VO.
+Mas ficará mais claro nas proximas sessoes. Onde versionaremos os endpoints.
+
+
