@@ -1,0 +1,40 @@
+/14 RestWithSpringBootUdemy Scaffold Versioning your API
+
+A ferramenta que usaremos para o versionamento das APIs é o DozerMapper novamente
+
+Versionamento dos EndPoints:
+Muitas vezes as APIs crescem e acabam tendo muitos clients, o que dificulta a manutenção dessa API. 
+POR EXEMPLO: nossa API até agora captura apenas FirstName, LastName, Gender e Adress. E se precisassemos adicionar a data de nascimento?
+Você nao pode simplesmente fechar o serviço e iniciar de novo.
+Você tem que dar um tempo para seus clients e adaptar o seu lado do serviço.
+O que é feito entao? 
+criado um outro endpoint por exemplo
+http://localhost:8080/person/v2
+
+e para os novos usuários vc direciona diretamente para esse segundo endpoint e para os antigos vc notifica para adaptarem neste novo endpoint que em certa data, o endpoint anterior(http://localhost:8080/person/v1)
+será desabilitado
+
+
+O QUE GERALMENTE FAZEM?
+Na classe PersonController, alteram o @RequestMapping("/person/v1/")
+
+PORÉM tambem pode ser feito alterando os Mapping dos métodos, em vez da classe toda, que é o que iremos fazer:
+
+@PostMapping("v2")
+		public PersonVO createV2(@RequestBody PersonVO person){
+			return services.create(person);	
+		}
+
+
+após isso, devemos alterar o PersonService de criação tambem, para garantirmos a criação com o BirthDate metodo createV2 por exemplo.
+
+O que levaria a outra questão, nosso VO nao possui o atributo BirthDate, nem nossa entity
+
+Criamos o package br.com.erudio.data.vo.v2
+nele criamos o PersonVOV2 com o birthDate
+
+voltamos para o service e controller e ajustamos os métodos V2 para PersonVOV2.
+PORÉM ainda existe uma incompatibilidade entre o DOZER CONVERTER que criamos . pois o Person (entidade), que não tem o BirthDate, é diferente do PersonVOV2. 
+
+
+Por isso iremos criar um Custom Converter do Dozer na prox aula.
