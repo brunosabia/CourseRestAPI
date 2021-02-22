@@ -1,0 +1,19 @@
+/15 RestWithSpringBootUdemy Scaffold Creating Custom Converter
+
+
+Nesta aula é demonstrado como criarmos um Converter customizado para não quebrar a aplicação.
+
+pois existe uma incompatibilidade entre a Entity e o VO, pois o VO tem um atributo a mais (BirthDate)
+
+desta forma criamos um converter customizado que na hora da conversão de uma entity que vem sem birthDate é setado uma new Date() (essa nao é uma solução, pois o certo seria adicionarmos esse atributo no banco e setarmos igual as outras variáveis.) 
+
+e na hora da conversão inversa, de VO para entidade, simplesmente nao passamos o birthDate de volta.
+
+
+Criamos o package br.com.erudio.converter.custom e dentro dele  a PersonConverter.
+
+e adicionamos nos métodos createV2 da Service e da controller, para fazermos o teste 
+
+(Fazer outro controller seria melhor)
+
+
