@@ -1,0 +1,5 @@
+abra o gitbash na pasta raiz do Maven project
+
+mvn clean package spring-boot:run
+
+(porem para vc fechar a app depois dessa execução é necessario matar o processo do Java(TM) Platform SE binary no gerenciador de tarefas)

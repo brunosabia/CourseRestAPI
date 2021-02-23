@@ -1,0 +1,61 @@
+16 RestWithSpringBootUdemy Scaffold Migrations
+
+O que é migration, é o equivale ao versionamento do BD.
+Utilizando como base os artigos de Martin Fowler, o design evolutivo do BD.
+https://www.martinfowler.com/articles/evodb.html
+
+https://flywaydb.org/documentation/migrations
+
+
+
+
+Para iniciar, adicionamos no pom, abaixo do mysql connector:
+	<dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+    </dependency>
+
+
+em seguida, no src/main/resources/application.properties:
+
+#Flyway Configs
+
+
+flyway.url=jdbc:mysql://localhost:3306/
+flyway.schemas=rest_with_spring_boot_udemy
+flyway.user=root
+flyway.password=computer
+
+
+agora vamos adicionar nossa pasta de migrations dentro da src/main/resources/ chamada "db" e dentro da pasta "db", criamos a pasta "migration"
+
+Dentro da pasta migration, nós criamos um file chamado 
+"V1__Create_Table_Person.sql" (seguindo o padrão de Martin Fowler)
+
+após isso, vamos até o nosso workbench e exportamos nosso BD para um arquivo chamado "meu_bd.sql" e abrimos ele no bloco de notas. lá nós copiamos apenas esta parte do código:
+
+CREATE TABLE `person` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `address` varchar(100) NOT NULL,
+  `first_name` varchar(80) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `last_name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+e colamos no V1__Create_Table...
+
+
+criamos entao a V2__Populate_Table_Person e colocamos a seguinte parte copiada:
+
+
+INSERT INTO `person` VALUES (1,'Uberlandia','Leandro','Male','Costa'),(2,'Uberlandia','Gabriela','Female','Costa'),(3,'Uberlandia','Carlos','Male','Silva'),(8,'Uberlandia','Fernanda','Female','Cardoso da Silva'),(10,'Uberlandia','Pedro','Male','Paulo');
+
+
+
+
+após essa etapa, fomos até o banco e excluimos o BD salvo lá. com essas mesmas informações que colocamos nas migrations
+
+(poderiamos executar o programa que essas migrations criariam um novo schema, porém para demonstração, criamos um banco no BD com o nome igual o das migrations para vermos o versionamento das alterações funcionando)
+
+`rest_with_spring_boot_udemy`
