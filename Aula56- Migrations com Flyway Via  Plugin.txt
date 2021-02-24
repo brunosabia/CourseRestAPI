@@ -1,0 +1,36 @@
+17 RestWithSpringBootUdemy Migrations Via Plugin
+
+Nesta aula adicionamos ::
+
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/rest_with_spring_boot_udemy</url>
+					<user>root</user>
+					<password>computer</password>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>${mysql.version}</version>
+						<exclusions>
+							<exclusion>
+								<artifactId>slf4j-api</artifactId>
+								<groupId>org.slf4j</groupId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+				</dependencies>
+			</plugin>
+		
+
+Dentro do nosso pom.xml com o objetivo de executar o flyway sem precisar iniciar o springboot
+
+
+e entao, no gitbash da pasta raiz do project digitamos:
+
+mvn flyway:migrate
+
+basicamente, nesta seção foi explicado como realizar migrations e controlar seus versionamentos (recomandando fazer bem separados) utilizando o flyway para ter mais controle do que pelo próprio hibernate.
