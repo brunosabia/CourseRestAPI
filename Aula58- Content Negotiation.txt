@@ -1,0 +1,9 @@
+é necessaria uma negociacao de sua API para atingir os mais diversos tipos de client, prover mais de uma serialização de dados, JSON, XML, entre outras, pode nos dar muitas vantagens para atingirmos maiores publicos.
+
+Vamos aprender a reealizar content negotiation por:
+
+-Extension
+
+-Query Param
+
+-Header Param
