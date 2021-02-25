@@ -1,0 +1,21 @@
+18 RestWithSpringBootUdemy Custom JSON Serialization
+
+Aqui aprenderemos a mudar a ordem, omitir e alterar as informações comunicadas pelo JSON
+
+na PersonVO, adicionamos:
+@JsonPropertyOrder({"id", "address", "firstName", "lastName", "gender"}) 
+antes de declarar a classe para alterar a ordem dos atributos no JSON
+
+
+e para alterarmos o nome, antes do atributo:
+@JsonProperty("last_name")
+
+
+e para omitir algum atributo utilizamos o:
+@JsonIgnore
+
+
+esse é o uso basico do JSON customization
+
+
+
