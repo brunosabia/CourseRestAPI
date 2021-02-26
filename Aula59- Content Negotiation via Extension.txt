@@ -1,0 +1,42 @@
+/19 RestWithSpringBootUdemy Content Negotiation
+
+Content negotiation tb pode ser:
+
+Server driven:
+é uma atitude proativa por parte do logaritmo do server que entende quais os tipos de midia recebidos e aceitados pelo client.Funciona a partir do conceito que os browsers enviam informacoes como parte de cada request (chamado de Agent Driven)
+POR EXEMPLO:
+um client da alemanha faz o request do seu server na linguagem "Alemão" , seu  server driven pode ter essa opção disponibilizada e devolver a response adequada para o agent/client.
+
+Primeiro passo nessa aula foi adicionar no pom.xml a dependencia responsável pela SERIALIZAÇÃO DE XML.
+
+adicionamos:
+<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+
+
+
+Após isso, criamos o package br.com.erudio.config e dentro dele a Class WebConfig.java.
+
+
+
+Na classe controller, apos a criação da classe WebConfig, precisamos alterar as  annotations que antes produziam e consumiam apenas JSON. e alteramos todas menos a Delete.
+
+ficaram assim:
+
+@GetMapping(produces = {"application/json", "application/xml" })
+
+
+@PostMapping(produces = {"application/json", "application/xml" },
+					 consumes = {"application/json", "application/xml" }) 
+
+
+@PutMapping(produces = {"application/json", "application/xml" },
+				 consumes = {"application/json", "application/xml" })
+
+
+
+após apenas estas alterações, rodamos a application e ao adicionar o .json ou .xml (as extensions) ao fim do URL, obtemos retornos diferentes.
+
+

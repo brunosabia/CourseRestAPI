@@ -1,3 +1,6 @@
+é a possibilidade do seu api suportar varios tipos de content, sendo ele html, texto, json...
+
+
 é necessaria uma negociacao de sua API para atingir os mais diversos tipos de client, prover mais de uma serialização de dados, JSON, XML, entre outras, pode nos dar muitas vantagens para atingirmos maiores publicos.
 
 Vamos aprender a reealizar content negotiation por:
