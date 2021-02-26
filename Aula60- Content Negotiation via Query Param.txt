@@ -1,0 +1,23 @@
+/20 RestWithSpringBootUdemy Content Negotiation via QueryParam
+
+Neste caso mudamos apenas os métodos que chamamos dentro da classe br.com.erudio.config/WebConfig.java
+
+para os seguintes:
+
+configurer.favorPathExtension(false) //nesse codigo adicionado basicamente ele diz que nao aceita mais via Extension.
+		.favorParameter(true) //tornamos verdadeira a necessidade de um parametro que irá receber o tipo de content
+		.parameterName("mediaType") //demos o nome para esse parametro
+		.ignoreAcceptHeader(true) //ele irá ignorar o que vier no Header da requisição
+		.useRegisteredExtensionsOnly(false) //caso nenhum media type seja add, ele ainda assim rodará a app seguindo o defaultContentType.
+		.defaultContentType(MediaType.APPLICATION_JSON) //significa que o conteudo padrão será JSON
+		.mediaType("json", MediaType.APPLICATION_JSON) //e irá suportar os seguintes media types, JSON e XML
+		.mediaType("xml", MediaType.APPLICATION_XML);
+
+
+
+
+indo ao Postman em seguida e testando os seguintes links, recebemos os responses corretos, em XML e JSON.
+
+http://localhost:8080/api/person/v1?mediaType=json
+
+http://localhost:8080/api/person/v1?mediaType=xml
