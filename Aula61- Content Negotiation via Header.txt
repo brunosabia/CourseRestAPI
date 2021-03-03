@@ -1,0 +1,13 @@
+/21 RestWithSpringBootUdemy Content Negotiation via Header
+
+Nesta aula aceita passamos a web config para content negotiation pelo Header, o principal objetivo é não alterar o URL.
+
+No postman, para testar, ao requisitarmos:
+http://localhost:8080/api/person/v1
+
+adicionamos no Header a key:
+Accept
+e adicionamos o value:
+application/json
+ou entao
+application/xml
