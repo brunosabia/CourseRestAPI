@@ -1,0 +1,51 @@
+/22 RestWithSpringBootUdemy Content Negotiation Serializing YAML
+
+YAML - É uma forma de comunicação entre sistemas mais enxuto que o JSON, e por este motivo é ainda mais rápido.Porém é mais complexo para a leitura humana. Muito utilizado para configurações. E por enquanto é pouco usada, mas provavelmente será cada vez mais utilizada.
+
+Primeiramente vamos no pom.xml
+e adicionaremos a dependencia para trabalharmos com o YAML
+
+	<!-- for YML support -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+		</dependency>
+
+
+
+
+após isso criamos o package br.com.erudio.serialization.converter
+e nele a classe YamlJackson2HttpMessageConverter.java
+
+
+e após isso vamos até o 
+/22 RestWithSpringBootUdemy Content Negotiation Serializing YAML/src/main/java/br/com/erudio/config/WebConfig.java
+
+e lá adicionamos o método extendMessageConverter(); e a variável 
+
+private static final MediaType MEDIA_TYPE_YML = MediaType.valueOf("application/x-yaml");
+ E por fim adicionamos essa variável ao media type aceitado no configurer
+:
+
+.mediaType("x-yaml", MEDIA_TYPE_YML);//AQUI ADICIONAMOS O SUPORTE PARA YML
+
+após isso vamos até os controllers e adicionamos nos consumes e produces o :
+"application/x-yaml"
+
+
+
+rodamos nossa app, e enfim, no Postman adicionamos no header a key Accept com o value:
+application/x-yaml
+
+no link 
+http://localhost:8080/api/person/v1
+
+e obtivemos o resultado em yml.
+
+
+o POSTMAN ainda nao possui support para o YML, então para passarmos dados de YML , enviamos pelo body - raw e no Header adicionamos mais uma key de "Content-Type" com value: "application/x-yaml" tb
+
+
+
+
+
