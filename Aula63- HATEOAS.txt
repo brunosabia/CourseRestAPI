@@ -1,0 +1,95 @@
+/23 RestWithSpringBootUdemy HATEOAS
+
+
+Vamos adicionar HATEOAS a nossa API
+com o objetivo de atingir um nivel de maturidade maior para que ela se torne RestFul futuramente.
+
+primeiramente adicionamos a dependencia do HATEOAS no pom:
+
+<!-- for HATEOAS support -->
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+
+
+após isso, nós iremos no nosso VO, e nele iremos "extends ResourceSupport" do HATEOAS
+
+após isso, precisamos adaptar a classe, pois a resourceSupport ja possui um atributo ID, nos obrigado a alterar o atributo local.
+
+
+alteramos o nome do id local para "key" e pelo dozerMapper utilizamos a annotation "id" para ajustar isso. 
+
+criamos novos getters and setters e geramos novos hashcodes e equals
+
+(após isso ajustamos os erros que surgiram alterando o nome do método de getId() para getKey())
+
+
+em seguida fomos para o Startup e lá adicionamos outra annotation:
+
+@EnableAutoConfiguration 
+
+//essa annotation permite que o applicationContext do Spring seja automaticamente carregado baseado nos Jars e nas configs que vc define
+ela sempre é feita depois que os bins ja foram registrados no applicationContext. Te dá uma vantagem por reduzir a quantidade de configs que vc tem que se preocupar
+
+
+e a outra annotation:
+
+@ComponentScan
+
+//essa anotação é usada para dizer para o spring boot que ele deve scannear os nossos packages e encontrar os arquivos de config. como o WebConfig.java
+
+
+
+APÓS ISSO:
+
+consertaremos um erro que foi deixar o annotation @EnableWebMvc na classe WebConfig.java
+
+essa annotation ativa o springMvc na sua classe, que TAMBÉM vai subir outra instancia do springboot na sua aplicação, duplicando a instancia do Jackson que é a ferramente utilizada para serializar o JSON, XML , YAML...
+ o que poderia acarretar em uma sequencia de erros na serialização, por este motivo essa annotation foi comentada.
+
+
+
+
+em seguida partimos para o controller:
+ no método FindById()
+alteramos completamente o método(está comentado do passo a passo)
+
+
+realizamos os seguintes imports apos isso:
+
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
+import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+
+
+
+
+após isso rodamos a api e notamos que ele automaticamente adiciona o link especifico quando pesquisamos algum id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
