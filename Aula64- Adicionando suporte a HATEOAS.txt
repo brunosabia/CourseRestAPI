@@ -1,0 +1,92 @@
+/24 RestWithSpringBootUdemy HATEOAS pt2
+
+
+Nesta aula adicionamos a lógica da aula passa aos outros métodos.
+
+para adicionarmos os links do HATEOAS ao find all
+fizemos a mesma lógica dos casos singulares, porém dentro de um "stream().foreach()" que abre a lista e executa a ação de dentro do for each em cada um dos itens da lista (no caso criando links apontando para eles mesmos) que agora tem uma função mais clara.
+
+Em um retorno de uma lista, vc clicar em algum link desses itens retorna link do id especifico.
+
+
+No retorno do postman, recebemos como retorno informações desnecessárias (neste caso) ao adicionarmos o link. Por exemplo:
+
+ "links": [
+            {
+                "rel": "self",
+                "href": "http://localhost:8080/api/person/v1/8",
+                "hreflang": null,
+                "media": null,
+                "title": null,
+                "type": null,
+                "deprecation": null
+            }
+        ]
+
+
+(esses hreflang, media, title, type e deprecation são desnecessários neste caso)
+
+por este motivos vamos até o /24 RestWithSpringBootUdemy HATEOAS pt2/src/main/resources/application.properties
+
+
+lá nós adicionamos as #Jackson Configs abaixo:
+
+spring.jackson.default-property-inclusion=non_null
+
+
+
+
+esta linha de código informa ao jackson que caso a property seja null, ela nao precisa ser incluida na serialização, para evitar pesar a sua api.
+
+após essa inclusao no application.properties o resultado do postman é mais enxuto:
+
+"links": [
+            {
+                "rel": "self",
+                "href": "http://localhost:8080/api/person/v1/1"
+            }
+        ]
+
+
+
+
+
+PORÉÉÉÉM, apesar deste problema ter sido consertado para JSON e xml, para x-yaml o retorno do postman ainda continua complexo mesmo após as alterações acima
+
+
+por isso, vamos até o serialization.converter para ajustarmos lá a conversão do YAML de forma manual
+
+LÁ nos adicionamos o seguinte código no "new YAMLMapper()":
+.setSerializationInclusion(JsonInclude.Include.NON_NULL),...
+
+essa linha informa o Jackson que somente os valores NON NULL devem ser incluidos 
+
+
+
+
+Após esta etapa, as informações adicionais foram ocultadas da serialização.
+
+
+e para a exibição do Id em vez de key no postman, adicionamos annotation no PersonVO line 16
+
+@JsonProperty("id") //Annotation para a serialização com o Jackson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
