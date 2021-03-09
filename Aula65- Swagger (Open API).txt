@@ -1,0 +1,32 @@
+/25 RestWithSpringBootUdemy Swagger
+
+
+primeiramente nós iremos no pom.xml
+adicionar duas dependencias do Swagger:
+
+<!-- for Swagger Endpoints support -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		
+			<!-- for Swagger UI support -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
+
+(a primeira funciona para gerar a nossa documentação no swagger e a segunda para formatar corretamente essa documentação)
+
+
+Após isso nós vamos até o package br.com.erudio.config e criamos a classe SwaggerConfig.java
+
+
+http://localhost:8080/v2/api-docs
+
+
+
+http://localhost:8080/swagger-ui.html
