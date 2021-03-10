@@ -24,7 +24,7 @@ public class PersonService {
 	}
 	
 	public List<PersonVO> findAll() {			
-		return DozerConverter.parseListObjects(repository.findAll(), PersonVO.class); //ele vai ate o banco atraves do repos.findAll, traz uma lista de entidades
+		return DozerConverter.parseListObjects(repository.findAll(), PersonVO.class); //ele vai ate o banco atraves do repos.findAll, traz uma lista de entidades Person
 		// e o Dozer converte essa lista em PersonVO e retorna para o client.
 	}
 	

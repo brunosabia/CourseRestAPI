@@ -1,0 +1,23 @@
+/26 RestWithSpringBootUdemy Extra Challenge
+
+
+Adicionar as duas migrations:
+V3__Create_Table_Books.sql          F
+V4__Insert_Data_In_Books.sql	    F
+
+utilizei comando "mvn flyway:migrate"
+
+Criar a Entidade Book correspondente a tabela 		F
+
+Criar o Repositório					F
+
+Criar o BookVO						F
+
+Corrigir os testes automatizados para o Book		F
+
+Criar o BookService					F
+
+Criar o BookController 					F
+	Content Negotiation				F
+	HATEOAS						F
+	Swagger						F

@@ -35,7 +35,7 @@ public class WebConfig implements WebMvcConfigurer{
 		.mediaType("xml", MediaType.APPLICATION_XML);
 		*/
 		
-		
+		//CONTEUDO DA AULA 60
 		/* VIA QUERY PARAM.
 		configurer.favorPathExtension(false) //nesse codigo adicionado basicamente ele diz que nao aceita mais via Extension.
 		.favorParameter(true) //tornamos verdadeira a necessidade de um parametro que irá receber o tipo de content
@@ -47,7 +47,7 @@ public class WebConfig implements WebMvcConfigurer{
 		.mediaType("xml", MediaType.APPLICATION_XML);
 		*/
 		
-		
+		//CONTEUDO DA AULA 61
 		//Via HEADER PARAM.
 		configurer.favorPathExtension(false) //nesse codigo adicionado basicamente ele diz que nao aceita mais via Extension.
 		.favorParameter(false) //tornamos falsa a necessidade de um parametro que irá receber o tipo de content

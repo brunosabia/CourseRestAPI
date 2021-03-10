@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "books")
@@ -20,16 +22,17 @@ public class Book implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // significa que o Hibernate vai se responsabilizar pela geração dos Ids
 	private Long id;
 	
-	@Column(name = "author", nullable = false, length = 100) //cria uma coluna com o nome author que nao pode ser null
+	@Column(name = "author", nullable = false, length = 180) //cria uma coluna com o nome author que nao pode ser null
 	private String author;
 	
 	@Column(nullable = false, length = 100)	//cria uma coluna com o mesmo nome da variável
+	@Temporal(TemporalType.DATE)
 	private Date launch_date;
 	
 	@Column(nullable = false)	//cria uma coluna com o mesmo nome da variável
 	private Double price;
 	
-	@Column(nullable = false, length = 100)	//cria uma coluna com o mesmo nome da variável
+	@Column(nullable = false, length = 250)	//cria uma coluna com o mesmo nome da variável
 	private String title;
 	
 	public Book() {
