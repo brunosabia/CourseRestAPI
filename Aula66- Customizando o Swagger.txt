@@ -1,0 +1,28 @@
+/27 RestWithSpringBootUdemy Customizing Swagger
+
+Package: br.com.erudio.config:
+na classe SwaggerConfig.java
+
+trocamos a propriedade do RequestHandlerSelector para basePackage e add o método apiInfo() que especifica ainda mais o que será retornado ao swagger
+
+
+-----------
+para controlarmos o nome, descrição que será descrito no Swagger iremos até o controller da classe que desejamos mudar e adicionamos o comando abaixo:
+@Api(value = "Person Endpoint",description = "description for person", tags = {"PersonEndpoint"})
+
+
+(Lembrando que description está em desuso e value nao é obrigatória)
+
+
+para renomear os métodos com os verbos abaixo no swagger, é utilizado o annotation:
+
+@ApiOperation(value = "Find specific person recorded")
+
+acima de cada método.
+
+
+após terminarmos as annotations do código todo nós acessamos o link 
+
+http://localhost:8080/v2/api-docs
+
+copiamos o JSON lá existente e importamos no Postman, o que criou um collection ótimo não só para testar a api, como para compartilhar para seus clients mostrando exatamente como funcionam os endpoints da sua application.
