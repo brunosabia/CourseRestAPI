@@ -1,0 +1,14 @@
+/28 RestWithSpringBootUdemy CORS
+
+Na classe WebConfig:
+
+
+
+//CORS - a partir desse metodo todos os recursos ficam disponíveis para qualquer origem.
+	//funciona apenas com o GET , POST, PUT E DELETE. o PATCH ou OPTIONS não.
+	//levando em conta que alguns clients http enviam o HTTP OPTIONS ANTES de comecar a fazer as requisições ao servidor, esta implementação ainda precisará
+	//ser ajustada com o .allowedMethods
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+		.allowedMethods("GET","POST","PUT","PATCH","DELETE","OPTIONS","HEAD","TRACE","CONNECT"); //ADICIONAMOS esta linha para garantir que os verbos sejam aceitos e nao causem erros para o client.
+	}

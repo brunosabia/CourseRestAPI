@@ -1,0 +1,27 @@
+/28 RestWithSpringBootUdemy CORS
+
+CROSS ORIGIN RESOURCE SHARING
+Compartilhamento de recursos de origem cruzada
+
+-quando implementado permite que o site acesse recursos de outro site mesmo estando em dominios diferentes.
+
+Comum causa de dificuldades na hora de integrar uma aplicação Web a uma API REST.
+
+Os navegadores normalmente possuem
+uma funcionalidade de segurança chamada " Same Origin Policies"
+(Politicas de Mesma Origem)
+que diz que os recursos de um site só pode ser chamado se os dois sites estiverem sob o mesmo dominio.
+
+E quando criamos uma API o que queremos é justamente o contrário, que ela esteja disponível independente do dominio do client.
+
+A MANEIRA DE HABILITAR CORS varia de acordo com o framework. Existem varias formas pra frameworks, node.js, asp.net, springboot...
+
+site com info:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+-HABILITAR CORS PELO CONTROLLER:
+
+No caso, adicionamos o annotation:
+@CrossOrigin(origins = {"http://localhost:8080", "http://www.erudio.com.br"})
+
+*na classe PersonController no caso, e no postman, na hora de realizarmos os testes, adicionamos no Header a Key: Origin e value sendo o endpoint como o "http://www.erudio.com.br" por exemplo.
