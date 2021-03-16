@@ -1,0 +1,10 @@
+/29 RestWithSpringBootUdemy Preparing BD for JWT Authentication
+
+Após terminarmos de ajustar a classe User.java
+
+vamos para a br.com.erudio.repository na classe UserRepository.java
+
+em seguida vamos para a classe criada agora 
+/29 RestWithSpringBootUdemy Preparing BD for JWT Authentication/src/main/java/br/com/erudio/services/UserService.java
+
+a classe UserService neste ponto apenas busca o repositório por um username e retorna o user.

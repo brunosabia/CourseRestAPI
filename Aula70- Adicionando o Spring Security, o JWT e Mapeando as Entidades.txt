@@ -1,1 +1,33 @@
 /29 RestWithSpringBootUdemy Preparing BD for JWT Authentication
+
+
+primeiramente adicionamos as dependencias ao pom.xml do project
+
+		<!-- for Security  support -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
+Esta dependencia acima é simplesmente pelos imports de segurança que o springboot fornece.
+
+
+<!-- for JWT Tokens support -->
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+
+
+essa acima é para conseguirmos gerar os tokens que serão usados na autenticação.
+
+
+criamos a classe Permission.java no package "model"
+
+em seguida criamos a classe User. que é onde criamos a relação de ManyToMany, onde um user pode ter varias permissões e uma permissão pode ser de muitos usuários.
+
+Criamos uma Joined Table no banco, que recebe o id do user e o id das permissions.
+
+Basicamente realizamos esta relação utilizando apenas chaves estrangeiras.
