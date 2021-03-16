@@ -1,0 +1,18 @@
+/29 RestWithSpringBootUdemy Preparing BD for JWT Authentication
+
+Qualquer API profissional precisa de autenticação e segurança.
+Nesta seção faremos isso.
+Inicialmente adicionaremos as dependencias do SpringSecurity e da JWT para entao ajustarmos nossa estrutura da app e do BD para suportarmos autenticação.
+Entenderemos o funcionamento dos tokens JWT e qual seu fluxo.
+
+Iremos tambem criar Novas exceptions customizadas.
+
+JWT Provider
+JWT Token Filter
+JWT Configurer
+
+(classes responsáveis por login e prover os tokens)
+
+
+
+Nesta aula nós apenas adicionamos as migrations no project e rodamos o programa para atualizar o BD
