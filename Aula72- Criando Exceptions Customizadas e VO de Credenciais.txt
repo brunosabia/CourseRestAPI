@@ -1,0 +1,10 @@
+/30 RestWithSpringBootUdemy Adjusting VOs and Exceptions for Authentication
+
+ Primeiramente nesta aula nós criamos o package
+br.com.erudio.security e adicionamos o AccountCredentialsVO com o username e password que será serializable tambem.
+
+APÓS isso, nós criamos no package Exception a InvalidJwtAuthenticationException (Copiamos  outra exceção e ajustamos seu Response Status e extends)
+
+
+EM SEGUIDA vamos para o package Exception.Handler na classe CustomizedResponseEntityExceptionHandler nessa classe nós iremos adicionar um método com annotation ExceptionHandler(InvalidJwtAuthenticationException.class) com o nome de invalidJwtAuthenticationException.class)
+e o resto do código igual ao dos outros métodos dessa classe.

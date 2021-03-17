@@ -1,0 +1,18 @@
+/30 RestWithSpringBootUdemy Adjusting VOs and Exceptions for Authentication
+
+criamos o package e classe:
+/30 RestWithSpringBootUdemy Adjusting VOs and Exceptions for Authentication/src/main/java/br/com/erudio/security/jwt/JwtTokenProvider.java
+
+e nesta classe nós definimos valores iniciais de uma secret key e a duração do token, o annotation "@Value" dessa classe tambem poderia ser alterado pelo application properties pelas seguintees linhas que foram comentadas:
+# Security
+#Security.jwt.token.secret-key=secret
+#Security.jwt.token.expire-length=3600000
+
+
+criamos métodos init (responsável por encodar a secret key no momento da injeção da dependencia)
+
+criamos o método createToken() que pega o username, as autorizações do usuário e cria um retorna um token a partir das autorizações, horario de criação do token, validade do token, algoritmo usado para encriptação e compacta esse token.
+
+
+ENFIM:
+criamos o método getAuthentication(TOKEN) ele vai pegar esse token, vai encontrar o usuário presente no token vai até a UserDetailsService ( que é uma interface do security do proprio Spring), lá ele irá ler esse usuário e retornará uma UsernamePasswordAuthenticationToken.
