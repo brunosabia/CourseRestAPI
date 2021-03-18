@@ -15,4 +15,12 @@ criamos o método createToken() que pega o username, as autorizações do usuár
 
 
 ENFIM:
+criamos o método getUsername() que será usado pelo getAuthentication() que busca o username a partir do token
+
+
 criamos o método getAuthentication(TOKEN) ele vai pegar esse token, vai encontrar o usuário presente no token vai até a UserDetailsService ( que é uma interface do security do proprio Spring), lá ele irá ler esse usuário e retornará uma UsernamePasswordAuthenticationToken.
+
+
+criamos o método resolveToken() que captura apenas o bearer Token que será passado pelo header.
+
+criamos o método validadeToken() que valida se o token está válido ou se já expirou.

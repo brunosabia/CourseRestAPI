@@ -1,0 +1,9 @@
+31 RestWithSpringBootUdemy JWT Token Filter and JWT Configurer
+
+Aqui nós criamos a classe JwtTokenFilter nós extendemos o GenericFilterBean e por isso precisamos sobrescrever o doFilter. No doFilter nós obtemos o token que veio no cabeçalho da request e verificamos se ele é diferente de null e válido. Se ele for válido então tenta-se obter a autenticação e se estiver tudo OK com o token então a autenticação é setada no contexto.
+
+
+
+Agora nós vamos criar a classe JwtConfigurer
+
+Como nós extendemos SecurityConfigurerAdapter então precisamos sobrescrever o método configure. No nosso caso nós adicionamos um novo filtro ao tráfego para a nossa API. E isso precisa ser feito antes do acesso aos endpoints de negócio por isso o http.addFilterBefore.
