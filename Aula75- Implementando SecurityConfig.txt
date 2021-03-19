@@ -1,0 +1,10 @@
+/32 RestWithSpringBootUdemy Implementing Security Config
+
+Nesta aula nós iremos criar a classe
+/32 RestWithSpringBootUdemy Implementing Security Config/src/main/java/br/com/erudio/config/SecurityConfig.java
+
+esta classe terá o método passwordEncoder() que vai encodar a password recebida.
+
+criaremos o AuthenticationManager() seguindo um padrão.
+
+e enfim criaremos o metodo configure que especificamente configura a segurança da app e está devidamente comentado.
