@@ -1,0 +1,57 @@
+/33 RestWithSpringBootUdemy Implementing AuthController
+
+nesta aula criamos o AuthController com o método SignIn que basicamente:
+
+recebe dados pelo body do VO
+passa esses dados por param na SignIn
+
+armazena os dados desse VO em variáveis locais
+
+realiza a authentication pelo Manager
+
+busca o user no repository
+
+se o user for encontrado ele cria um token desse user com as permissoes dele
+
+um obj é mapeado para retornar o username e token criado
+
+
+
+Execução:
+1- Browser- POST/users/login com username e passw
+
+2- SERVER- Cria um JSON Web Token com um secretKey
+
+3- BROWSER - Recebe o JWT token 
+
+
+Quando o client for fazer uma nova requisição, ele nao precisa mais mandar o user e senha ele apenas envia o JWT Token: 
+
+4- BROWSER - Envia o JWT no Header como Authorization
+
+5- SERVER-  Verifica a assinatura do JWT e pega as informações do usuário a partir do token. 
+E envia a response para o client
+
+
+Realizamos os testes de Auth no Postman:
+
+http://localhost:8080/auth/signin
+
+com headers:
+
+Content-Type 	application/json
+
+Accept		application/json
+
+
+Body:
+
+{
+    "username":"leandro",
+    "password":"admin123"
+}
+
+
+
+recebemos o token, e confirmamos no https://jwt.io/ que o token está valido.
+Na proxima aula iremos verificar o pq o token nao está sendo aceito como Header Authorization para outros requests.
