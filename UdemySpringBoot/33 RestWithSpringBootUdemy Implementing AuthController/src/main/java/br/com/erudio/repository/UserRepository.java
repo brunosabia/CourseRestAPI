@@ -11,7 +11,7 @@ import br.com.erudio.data.model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	//Vamos usar o JPQL (Jakarta Persistence Query Language , former Java Persistence Query Language) para mostrar outra maneira de buscar no repositório.
-	
+	//Pq não existe find by username no JpaRepository
 	@Query("SELECT u FROM User u WHERE u.userName =:userName") //JPQL
 	User findByUsername(@Param("userName") String userName);
 	//o Query ali irá selecionar o User com o userName recebido pelo findByUsername();

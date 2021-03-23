@@ -1,0 +1,38 @@
+Nesta aula nós começamos criando um environment no postman com os seguintes valores
+
+
+KEY		VALUE
+
+host   		http://localhost:8080	
+
+user 		leandro
+
+password 	admin
+
+bearer_token 	(deixar em branco)
+
+
+o que nos permite setar o JSON do body da requisition para:
+
+{
+    "username":"{{user}}",
+    "password":"{{password}}"
+}
+
+
+AGORA nós criaremos umas linhas de código na aba Tests da requisição do postman:
+
+
+
+if(responseCode.code >= 200 && responseCode.code <= 299){
+    var jsonData = JSON.parse(responseBody);
+    postman.setEnvironmentVariable("bearer_token", jsonData.token);
+}
+
+
+
+(se o response code estiver entre 200 e 299 significa que ele foi bem sucedido, CASO ele seja bem sucedido, nós iremos buscar o valor do retorno para a var jsonData. e depois, setaremos o jsonData.token como o bearer_token do environment! O que nos poupa de adicionar o token todas as reqs que fazemos.)
+
+
+APÓS TUDO ISSO, nós podemos realizar a mesma troca de variáveis de bearer token no header das outras aplicações como o GET da Book, por exemplo, que agora tem no header:
+Authorization 	 	Bearer {{bearer_token}}

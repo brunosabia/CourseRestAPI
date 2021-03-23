@@ -42,18 +42,22 @@ public class JwtTokenProvider {
 	
 	//Criando o token
 	public String createToken(String username, List<String> roles) {
-		Claims claims =Jwts.claims().setSubject(username); //claims tem um significado similar a "direitos", "autorizações"
-		claims.put("roles", roles); //definindo os papéis do user
-		
-		Date now = new Date(); //pegando uma variavel do horario atual
-		Date validity = new Date(now.getTime() + validityInMilliseconds); //somando a 1hr ao horario atual para calcular o tempo de duração do token
-		
-		return Jwts.builder()
-				.setClaims(claims) //setar as autorizações
-				.setIssuedAt(now) //quando o token é criado
-				.setExpiration(validity) //validade do token
-				.signWith(SignatureAlgorithm.HS256, secretKey) //passar o algoritmo usado para encriptar e a palavra secreta
-				.compact(); //compactando
+		try {
+			Claims claims =Jwts.claims().setSubject(username); //claims tem um significado similar a "direitos", "autorizações"
+			claims.put("roles", roles); //definindo os papéis do user
+			
+			Date now = new Date(); //pegando uma variavel do horario atual
+			Date validity = new Date(now.getTime() + validityInMilliseconds); //somando a 1hr ao horario atual para calcular o tempo de duração do token
+			
+			return Jwts.builder()
+					.setClaims(claims) //setar as autorizações
+					.setIssuedAt(now) //quando o token é criado
+					.setExpiration(validity) //validade do token
+					.signWith(SignatureAlgorithm.HS256, secretKey) //passar o algoritmo usado para encriptar e a palavra secreta
+					.compact(); //compactando
+		} catch (Exception e) {
+			throw new InvalidJwtAuthenticationException("Expired or invalid token",e);
+		}
 	}
 	
 	private String getUsername(String token) {
@@ -70,9 +74,6 @@ public class JwtTokenProvider {
 		UserDetails userDetails = this.userDetailsService.loadUserByUsername(getUsername(token));
 		return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
 	}
-
-	
-	
 	
 	public String resolveToken(HttpServletRequest req) {
 		String bearerToken = req.getHeader("Authorization");
@@ -102,7 +103,7 @@ public class JwtTokenProvider {
 				return true;
 			}catch(Exception e)
 			{
-				throw new InvalidJwtAuthenticationException("Expired or invalid token");
+				throw new InvalidJwtAuthenticationException("Expired or invalid token",e);
 			}	
 	}
 	

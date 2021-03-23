@@ -64,7 +64,7 @@ public class AuthController {
 					return ok(model); //retorna o model de retorno
 			
 		} catch (AuthenticationException e) {
-			throw new BadCredentialsException("Invalid username/password supplied.");
+			throw new BadCredentialsException("Invalid username/password supplied.",e);
 		}
 	}
 }
