@@ -1,0 +1,24 @@
+34 RestWithSpringBootUdemy PATCH Verb
+
+
+A principio, usar o PUT para todos os updates que faremos nas nossas APIs não é a melhor opção. desta forma, vamos conhecer o PATCH, que minimiza o trafego da rede e ganha performance. MAS toda escolha tem seus lados negativos.
+
+Basicamente: o PUT carrega dentro dele o payload do obj inteiro que será updatado. O que se torna um problema quando trabalhamos com objs muito grandes.
+O Patch carrega apenas as informações que serão apenas updatadas. O problema é que pode causar corrompimentos e os retornos do PATCH podem nao ser sempre iguais.
+
+
+pré aula: Ajuste das annotations na AuthController para o uso do Swagger.
+
+
+adicionamos a migration V11 , adicionamos a variável "enabled" tanto na entidade Person quando no PersonVO e ajustamos gets, sets, hashs e equals.
+
+no PersonRepository adicionamos uma query que irá manipular essa coluna "enabled" que foi criada no banco.
+
+E no PersonService nós criamos o método disablePerson que irá rodar aquela query declarada no repository e em seguida buscar ela no banco usar o dozer converter e retornar o VO dela.
+
+Utilizaremos o annotation @Transactional do spring nesse método disablePerson() principalmente PQ:
+A anotação @Transactional trabalha dentro do escopo de uma transação no banco de dados, a transação do banco de dados ocorre dentro do PersistenceContext, que por sua vez, está dentro do EntityManager que é implementado usando Hibernate Session (quando você está usando o Hibernate como container).
+
+POR FIM ADICIONAMOS o método disablePerson no PersonController, muito similar ao FindById, só que em ves de simplesmente achar a entidade e passar ela em diante, nós achamos a entidade e setamos o enabled dela para false.
+
+Com annotation @PatchMapping, este é um método que utiliza o verbo PATCH
