@@ -1,0 +1,17 @@
+35 RestWithSpringBootUdemy Paged Search
+
+O principal ponto positivo para busca paginada é a diminuição do trafego de pacotes. em vez de disponibilizar muita informação de uma vez, ela é parcelada se tornando muito mais rapida de ser acessada.
+
+relembrando:
+
+Path Params:
+http://localhost:8080/person/v1/4
+
+
+Query Params:
+http://localhost:8080/person/v1?name=carlos&color=purple
+
+
+
+POPULAMOS o nosso BD de Person com mais de 1000 mock datas criados no Mockaroo
+agora vamos ajustar o nosso FindAll para que nosso JSON de retorno seja mais compacto(parcelado) na hora do retorno em vez de retornar esses 1000 persons cadastrados de uma só vez e colocar a perfomance em risco.

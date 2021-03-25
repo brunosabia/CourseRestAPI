@@ -22,3 +22,32 @@ A anotação @Transactional trabalha dentro do escopo de uma transação no banc
 POR FIM ADICIONAMOS o método disablePerson no PersonController, muito similar ao FindById, só que em ves de simplesmente achar a entidade e passar ela em diante, nós achamos a entidade e setamos o enabled dela para false.
 
 Com annotation @PatchMapping, este é um método que utiliza o verbo PATCH
+
+
+
+
+Testando o PATCH no Postman:
+
+Basicamente ele funciona NESTE CASO como um put, porém vc só precisa passar o id por path, e ele executa o método de disablePerson e seta o enable para false.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
