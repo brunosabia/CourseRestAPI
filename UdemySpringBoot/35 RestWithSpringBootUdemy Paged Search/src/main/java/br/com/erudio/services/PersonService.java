@@ -3,6 +3,7 @@ package br.com.erudio.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,8 +25,9 @@ public class PersonService {
 		return vo; //retorna o VO para o client
 	}
 	
-	public List<PersonVO> findAll() {			
-		return DozerConverter.parseListObjects(repository.findAll(), PersonVO.class); //ele vai ate o banco atraves do repos.findAll, traz uma lista de entidades Person
+	public List<PersonVO> findAll(Pageable pageable) {		
+		var entities = repository.findAll(pageable).getContent(); //basicamente passando o page e o limit ele consegue trazer o conteudo correto do retorno.
+		return DozerConverter.parseListObjects(entities, PersonVO.class); //ele vai ate o banco atraves do repos.findAll, traz uma lista de entidades Person
 		// e o Dozer converte essa lista em PersonVO e retorna para o client.
 	}
 	

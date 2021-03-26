@@ -15,3 +15,29 @@ http://localhost:8080/person/v1?name=carlos&color=purple
 
 POPULAMOS o nosso BD de Person com mais de 1000 mock datas criados no Mockaroo
 agora vamos ajustar o nosso FindAll para que nosso JSON de retorno seja mais compacto(parcelado) na hora do retorno em vez de retornar esses 1000 persons cadastrados de uma só vez e colocar a perfomance em risco.
+
+
+Para a paginação nós iremos criar um query param seguindo o seguinte padrão:
+
+{{baseURL}}/api/person/v1/page=0&limit=15&direction=asc
+
+
+onde page = pagina que se encontra
+     limit = quantidade de itens retornados por vez nesta pag
+     direction = ascending ou descending
+
+ATÉ AGORA no projeto nós apenas implementamos o page e o limit, no método FindAll no PersonController e o findAll do PersonServices tb, desta forma nos adicionamos os parametros que irão receber os query params SE ELES EXISTIREM, se não os valores default serão setados, e então importamos um Pageable da DATA.DOMAIN
+para setar as informações da pagina e do limite de retornos dessa pagina.
+
+passamos este pageable como param para o findAll da PersonServices, e então vamos até lá para ajustar.
+
+No findAll da PersonServices nós passamos o pageable como parametro para o repositório JPA que já possui uma sobrecarga recebendo o pageable como parametro e utilizamos o getContent()para colocar os dados desse retorno na variavel "entities" para entao retornarmos ela seguindo o padrão do query param recebido.
+
+Teste no postman feito com links:
+
+{{host}}/api/person/v1?page=0&limit=2
+
+
+{{host}}/api/person/v1?page=0&limit=5
+
+{{host}}/api/person/v1?page=1&limit=2
