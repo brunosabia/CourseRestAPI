@@ -39,7 +39,7 @@ public class AuthController {
 	
 	//Sign In Method
 	@ApiOperation(value = "Authenticates user and returns token")
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("rawtypes")//
 	@PostMapping(value = "/signin",produces = {"application/json", "application/xml","application/x-yaml" },
 			 consumes = {"application/json", "application/xml","application/x-yaml" }) 
 	public ResponseEntity signin(@RequestBody AccountCredentialsVO data){ //recebe o VO como param
@@ -50,6 +50,7 @@ public class AuthController {
 			
 				authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password)); //realiza a authenticação
 			
+				
 				var user = repository.findByUsername(username); //busca o user no repository
 			
 				var token = "";
