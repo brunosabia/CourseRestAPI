@@ -1,0 +1,10 @@
+/35 RestWithSpringBootUdemy Paged Search
+
+Nesta aula simplesmente adicionamos um RequestParam no findAll, chamado Direction onde recemos uma string direction e setamos valor default de "asc".
+
+Em seguida passamos essa string recebida para uma outra variavel: sortDirection onde verificamos case sensitive e adicionamos a opção de "desc"
+
+por fim, adicionamos ao pageable ainda no método findAll o sortBy() e passamos a direction recebida acima. seja ela default ou a alterada.
+
+realizamos o teste no postman no link:
+{{host}}/api/person/v1?page=0&limit=5&direction=asc
