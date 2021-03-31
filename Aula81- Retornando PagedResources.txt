@@ -1,0 +1,20 @@
+Agora nós vamos fazer alterações no PersonServices e PersonController para que possamos trocar paginas de buscas por links (o HATEOAS), onde podemos clicar na pagina 4, por exemplo e irmos direto para lá.
+
+1- vamos na PersonService, e lá nós iremos alterar o método findAll, pois ele nao retornará mais uma List<PersonVO> e sim uma Page<PersonVO> do import org.springframework.data.domain.Page;
+
+2 recebemos uma pagina do pageable e retornamos ela mapeada de acordo com o método private local que criamos, que faz a conversão de entity para VO e será usado no findAll
+
+3 após isso vamos ao PersonController, onde existirá o erro, pois o retorno do find all deixou de ser uma lista de PersonVOs e se tornou uma lista de Pages
+
+4 mudamos o retorno do método findAll do controller para
+ResponseEntity<PagedResources<PersonVO>> 
+e adicionamos um param chamado:
+
+PagedResourcesAssembler assembler
+
+esse param é setado automaticamente pelo spring.
+
+após isso nós mudamos o tipo da lista "persons" pois ela recebe uma lista de paginas agora, e por fim mudamos o ultimo o return do método em si. Onde agora retornamos um Response entity com o assembler do springboot automaticamente pegando a lista de pages "persons" e retornando o statuscode 200OK.
+
+
+Por desafio estas alterações tb foram feitas para os Books
