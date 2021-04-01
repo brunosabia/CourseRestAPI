@@ -1,0 +1,11 @@
+/37 RestWithSpringBootUdemy Customizing Pageable
+
+Nesta aula decidimos utilizar PathParams E Query Params na busca, e para isso, precisamos criar no repository de Person uma nova query que busca na string firstName pela entrada que será passada como pathparam.
+
+em seguida fomos até o PersonService e lá nós criamos uma "copia" do findAll porém acrescentamos o firstName como param a ser passado.
+
+realizamos novamente no PersonController a copia do findAll, adicionamos o PathVariable para receber o firstName e passamos um value para o url do endpoint e alteramos os métodos chamados do PersonServices para o findByPersonName passando o firstName e o pageable. 
+
+no POSTMAN criei uma vaiavel {{nameSearch}} para facilitar a manipulação da pesquisa nos testes e o url ficou:
+
+{{host}}/api/person/v1/findPersonByName/{{nameSearch}}?page=0&limit=5&direction=asc
