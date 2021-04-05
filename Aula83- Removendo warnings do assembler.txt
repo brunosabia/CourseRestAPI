@@ -1,0 +1,26 @@
+/38 RestWithSpringBootUdemy Removing Warnings
+
+
+Na PersonController nós utilizamos o PagedResourcesAssembler por parametro que o spring passava os valores automaticamente.
+PORÉM isso resultava em um warning (que foi deixado no BooksController, para demonstração.
+
+PARA resolvermos esse warning (do metodo findAll, no caso):
+
+1- em vez de passarmos o assembler por param, nos realizamos a injeção de dependencia dele 
+
+2- mudamos o método de retorno do método findAll para ResponseEntity<?> e armazenamos o "assembler.toResource()" em um PagedResources<?> antes de retorná-lo. 
+Em vez de fazer tudo em uma linha só.
+
+como era:
+
+return new ResponseEntity<>(assembler.toResource(persons),HttpStatus.OK);
+
+
+
+
+
+como ficou:
+
+PagedResources<?> resources = assembler.toResource(persons);
+
+			return new ResponseEntity<>(resources,HttpStatus.OK);
