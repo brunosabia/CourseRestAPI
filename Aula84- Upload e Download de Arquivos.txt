@@ -1,0 +1,22 @@
+/39 RestWithSpringBootUdemy Download and Upload Files
+
+
+Primeiramente vamos nos application.properties, onde iremos definir as configs da interface MultipartFile do Spring, que é responsável pela leitura dos arquivos recebidos e transferencia para o nosso servidor.
+
+
+adicionamos as configs do #MultipartFile e o local do UploadDir.
+
+após isso, nós criamos a classe FileStorageConfig com get e set apenas e com o annotation:
+
+@ConfigurationProperties(prefix="file")
+
+
+e por fim, na Startup nós adicionamos mais um annotation:
+
+@EnableConfigurationProperties({
+	FileStorageConfig.class
+})
+
+nós habilitamos o configurationProperties passando o arquivo recebido para o FileStorageConfig, que seguirá os padroes do application properties.
+
+no caso o prefix "file" com o atributo uploadDir!
