@@ -1,0 +1,8 @@
+/39 RestWithSpringBootUdemy Download and Upload Files
+
+
+nesta aula nós criamos o FileStorageService, que utiliza o FileStorageConfig que fizemos nas aulas passadas para buscar o diretório utilizando try catchs para passarmos as exceçoes que criamos.
+
+CASO a plasta indicada nao exista, ela será criada.
+
+em seguida criamos o método storeFile, onde iremos limpar (com o cleanPath) e validar(com o if) o nome do arquivo.

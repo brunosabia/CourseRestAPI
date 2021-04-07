@@ -1,0 +1,15 @@
+/39 RestWithSpringBootUdemy Download and Upload Files
+
+
+
+Nesta aula nós criamos o UploadFileResponseVO.java, é um VO com atributos que desejamos armazenar dos arquivos que iremos gerir e getters e setters.
+
+Criamos tambem 2 exceptions:
+
+FileStorageException
+e
+MyFileNotFoundException
+(já existe o fileNotFoundException, por isso o uso do "My", para podermos customizar essa.)
+
+
+ 
