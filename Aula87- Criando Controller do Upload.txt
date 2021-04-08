@@ -1,0 +1,15 @@
+/39 RestWithSpringBootUdemy Download and Upload Files
+
+Começaremos criando o Controller:
+FileController
+
+demos as anotações de controller normal, com o mapping do endpoint, tags do swagger
+
+injetamos a dependencia do service utilizado
+
+criamos o método Post "uploadFile" que irá receber um file por param
+que virá pelo body(
+
+No postman, criei a pasta file, do link
+{{host}}/api/file/v1/uploadFile que irá receber um form-data com o key chamado "file" igual ao param pedido no método uploadFile, após selecionar o file do value só enviar e verificar o DownloadUri, file name, fileType e size.
+)

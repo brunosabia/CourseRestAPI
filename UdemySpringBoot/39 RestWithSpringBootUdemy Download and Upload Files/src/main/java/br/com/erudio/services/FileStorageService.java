@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.sun.xml.bind.api.impl.NameConverter.Standard;
-
 import br.com.erudio.Exception.FileStorageException;
 import br.com.erudio.config.FileStorageConfig;
 
