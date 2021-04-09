@@ -1,0 +1,9 @@
+/40 RestWithSpringBootUdemy Simultaneous Uploads
+
+O conteudo desta aula foi basicamente, criar um método (uploadMultipleFiles) que recebe um array de files por param, transforma esse array em lista,
+percorre essa lista toda (stream) e dentro de cada file desta lista executa o método de uploadFile que já criamos. Por fim, coleta todos os returns desses métodos em uma lista e retorna essa lista de retornos para o user.
+
+o link ficou:
+{{host}}/api/file/v1/uploadMutipleFiles
+
+com o Body param, form-data, key "files" e selecionando quantos arquivos quiser.
