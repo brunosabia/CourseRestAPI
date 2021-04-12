@@ -1,0 +1,6 @@
+/40 RestWithSpringBootUdemy Simultaneous Uploads
+
+Nesta aula criamos o método:
+loadFileAsResource
+
+este método tem como função receber o fileName, buscar a localização dessa file, normalizar esse path e armazenar no filePath. Para depois transformar esse filePath em um Resource e retornando este resource. tudo isso dentro de um try Catch garantindo que o tratamento será feito.

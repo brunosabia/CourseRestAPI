@@ -1,0 +1,17 @@
+/40 RestWithSpringBootUdemy Simultaneous Uploads
+
+aqui nós criamos o método downloadFile no controller.
+
+este método recebe o fileName,
+utiliza o método que criamos anteriormente que transforma um filePath em um Resource.
+
+iniciamos a variável contentType como null msm.
+
+tentamos popular o contentType de acordo com o arquivo recebido
+
+caso nao consiga, será mostrado o log do erro.
+
+CASO o contentType seja null, setaremos ele para um tipo genérico.
+
+e por fim montamos o response com o contentType que descobrimos, com o anexo no cabeçalho
+e o resource(que é a propria file) no body da response
