@@ -1,0 +1,13 @@
+/41 RestWithSpringBootUdemy Docker
+
+O QUE É?
+é a disponibilização de CONTAINERS que são similares a maquinas virtuais, são ambientes ISOLADOS de execução de aplicações mas um container é ainda mais rapido, PORÉM eles nao necessitam ter um Sistema operacional, esses containers tem aplicações rodando atraves de um Kernel Linux utilizando a propria máquina hospedeira. O que torna os containers muito mais compactos em processamento , uso de memória, armazenamento em disco. Pois uma parte deste processamento está sendo feita diretamente no container.
+
+LibContainer é a responsável pela comunicação entre o dockerClient e o Docker daemon.
+
+No fim das contas, o lib.container isola e divide recursos de kernel como stack de rede, sistemas de arquivos, dentre outros...
+o Lib Container fornece um ambiente de execução ISOLADO e SEGURO para implantarmos nossas aplicações.
+
+como grande parte das execuções acaba acontecendo atraves desse container, é possível transferir essas "imagens" de aplicações para outras maquinas , basta ter o docker instalado.
+
+Uma facilidade do docker é construir suas proprias imagens, atraves dos DockerFiles.

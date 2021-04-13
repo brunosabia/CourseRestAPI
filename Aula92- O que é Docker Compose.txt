@@ -1,0 +1,24 @@
+/41 RestWithSpringBootUdemy Docker
+
+Uma situação:
+
+Quando iniciamos o Docker na nossa maquina para usarmos uma aplicação que acessa o BD, para rodá-la, surge o seguinte problema:
+
+iniciamos o Docker com 2 containers, da aplicação e o do Banco de dados, PORÉM  conforme já definimos, eles nao possuem comunicação entre si, pois eles são ISOLADOS.
+
+é possivel configurar esta comunicação toda manualmente atraves de linhas de comando no Docker CLient. 
+OU ENTAO
+
+USAR O DOCKER COMPOSE!
+
+(NO LINUX, o docker compose só é baixado separadamente, no windows é baixado em conjunto do docker Desktop)
+
+O QUE É O DOCKER COMPOSE?
+
+É uma abstração sobre o Docker Client que pode ser instalado junto com o Docker.
+Utilizado para inicializar multiplos container simultaneamente e prover comunicação entre eles. Simplifica e encapsula alguns dos argumentos que passamos no comando 'docker run'.
+
+
+
+NA PRATICA:
+na pratica o docker compose pega uma sequencia de comandos que você gostaria de definir, encapsula e cria um arquivo docker-compose.yml de configuração do docker. 
