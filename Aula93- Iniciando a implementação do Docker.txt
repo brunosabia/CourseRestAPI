@@ -14,3 +14,30 @@ ABRIMOS o Dockerfile da aplicação.
 vamos até o site:
 https://hub.docker.com/
 onde iremos procurar pela imagem do Maven (no caso o prof usou a  3.6.1 mas ela nao está mais disponivel entao uso a 3.8.1-jdk-11-slim.
+
+Editamos os 3 arquivos criados e com códigos pro docker.
+
+sendo o docker-compose.yml o que sobrescreverá os outros. caso possuam definicoes diferentes de itens iguais.
+ após isso, abrimos o prompt de comando do windows, e vamos até a pasta do arquivo docker-compose.yml com o "cd PATH_DA_PASTA"
+para confirmar é legal utilizar um comando "ls" no prompt que ele mostra o que está na pasta que vc se encontra.
+
+em seguida utilizamos os comandos para o docker como:
+
+Para buildar os container:
+docker-compose build
+
+Para forçar uma reinicializaçao do container e subir a aplicação:
+docker-compose up -d --build
+
+Para subir a aplicação apenas:
+docker-compose up
+
+Para mostrar todos os containers:
+docker ps -a   
+
+docker logs ID_DO_CONTAINER:
+para mostrar os logs do container especifico
+
+
+
+
