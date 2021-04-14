@@ -1,0 +1,16 @@
+41 RestWithSpringBootUdemy Docker
+
+primeiramente acessamos a pasta acima, e movemos todo o conteudo do projeto pra subpasta:
+RestWithSpringBootUdemy 
+
+junto com essa pasta que criamos( a RestWithSpringBootUdemy ) nós criamos dois arquivos de texto,
+um "docker-compose.yml" e um "Dockerfile" sem nenhuma extensão mesmo. (este dockerfile é responsável pra configurar o banco de dados)
+
+Dentro da pasta RestWithSpringBootUdemy nós criamos outro "Dockerfile" sem extensão tambem. ( este será usado para configurar a aplicação)
+
+
+ABRIMOS o Dockerfile da aplicação. 
+
+vamos até o site:
+https://hub.docker.com/
+onde iremos procurar pela imagem do Maven (no caso o prof usou a  3.6.1 mas ela nao está mais disponivel entao uso a 3.8.1-jdk-11-slim.
