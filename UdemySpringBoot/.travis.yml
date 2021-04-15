@@ -15,4 +15,4 @@ deploy:
   on:
     branch: master
 notifications:
-  email: false
+  email: false 
