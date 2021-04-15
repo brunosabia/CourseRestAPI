@@ -1,0 +1,15 @@
+DockerHub é basicamente um github das imagens do docker onde são encontradas as imagens das aplicações open source e onde você pode uploadar suas proprias imagens.
+Esse processo é muito usado principalmente na hora de realizar o update de imagens em servicos cloud como o AWS, Azure... entre outros.
+para realizar o upload normalmente é usado o 
+
+Para logar no dockerHub:
+docker login docker.io 
+
+para ver as imagens em uso: 
+docker images
+
+para realizar o upload no dockerHub:
+docker push NOME_DA_IMAGEM
+
+
+ 

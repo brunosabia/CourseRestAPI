@@ -1,0 +1,8 @@
+O travisCI é uma ferramenta de integração contínua gratuita que ajuda na interação com o DockerHub:
+
+1- nós fazemos o código e push pro github
+
+2- O github começa a passar essas informações para o Travis CI
+
+3- TravisCI constrói uma imagem e envia para o DOcker Hub
+

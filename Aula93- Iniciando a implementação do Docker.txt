@@ -35,9 +35,17 @@ docker-compose up
 Para mostrar todos os containers:
 docker ps -a   
 
-docker logs ID_DO_CONTAINER:
-para mostrar os logs do container especifico
+Para mostrar os logs do container especifico:
+docker logs ID_DO_CONTAINER
 
+Para realizar o login com o docker:
+docker login docker.io
+
+Para exibir as imagens que você tem no seu repositório:
+docker images
+
+para fazer o update de uma imagem para o dockerHub:
+docker push NOME_DA_IMAGEM
 
 
 
