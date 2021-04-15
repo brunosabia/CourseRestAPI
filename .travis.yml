@@ -13,6 +13,6 @@ deploy:
     docker push brunosabia/mysql-rest-with-spring-boot-udemy;
     docker push brunosabia/rest-with-spring-boot-udemy;
   on:
-    branch: master
+    branch: main
 notifications:
   email: false
