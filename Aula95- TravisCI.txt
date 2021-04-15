@@ -6,3 +6,9 @@ O travisCI é uma ferramenta de integração contínua gratuita que ajuda na int
 
 3- TravisCI constrói uma imagem e envia para o DOcker Hub
 
+
+Adicionamos um file chamado ".travis.yml" na pasta raiz do projeto e lá nós passamos as informações do docker e da pasta de onde queremos realizar o build. Após isso viemos até o site do Travis-CI e adicionamos o valor das variáveis
+DOCKER_PASSWORD
+e
+DOCKER_USERNAME 
+nas settings do repositório para que a substituição seja feita na hora do login com o docker do travisCI.
