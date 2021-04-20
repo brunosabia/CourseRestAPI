@@ -4,3 +4,8 @@ https://aws.amazon.com/pt/free/?trk=ps_a134p000003yhPXAAY&trkCampaign=acq_paid_s
 
 conta gratuita a partir de 19-04-21;
 BD só fica disponível dia 20-04-21;
+
+
+O AWS Relational Database é criado gratuito, modo Dev, com menor tamanho (Micro 1gb) user docker e senha docker123 para teste e acessado atraves do link disponibilizado pelo AWS, utilizamos o Heidi para encontrar e visualizar o banco, utilizando o link e login usados da criação.
+
+Agora vamos fazer as alterações no application.properties
