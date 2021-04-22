@@ -1,0 +1,6 @@
+No application properties iremos fazer as alterações para o banco alimentado seja o do Amazon RDS, Relational Database Service.
+
+primeiro alteramos o a palavra "db" no spring.datasource.url = jdbc para o link do banco (algo como "restwithspringbootudemy.cumvzt8ysya2.us-east-2.rds.amazonaws.com"), o usuário e a senha pra "docker" e "docker123" pois é o que configuramos antes.
+após isso já é possível executar a aplicação.
+
+LEMBRE SE DE PARAR O DB NO AWS pós uso.
