@@ -1,0 +1,36 @@
+Nesta aula iremos aprender mais sobre a segurança da nossa API em relação a AWS
+
+Pra isso iremos criar um Usuário IAM para gerenciar os containers.
+Neste exemplo, iremos criar um usuário que irá integrar com o TravisCI, e criamos o user
+TRAVIS_CI, que terá o tipo de acesso: Acesso Programático. que é utilizando uma chave de acesso.
+Vamos anexar politicas existentes de forma direta, e vamos adicionar a policy "ex2containerregistrypolicy",
+proximo, não iremos adicionar tag/chave nenhuma e então criamos o usuário.
+
+APOS criarmos o usuário IAM:
+voltamos ao console de gerenciamento da AWS e lá nos iremos para o servico ECS(Amazon Elastic Container Service) de computação.
+
+Dentro do ECS iremos criar um Cluster, neste caso iremos escolher EC2 Linux + Networking
+
+o nome desse cluster: RestWithSpringBootUdemy
+
+EC2 Instance type: t2 micro
+
+mais embaixo, na opção "Key Pair" iremos clicar em EC2 Console  e depois em Create Key Pair( MY_KEY_PAIR), selecionar essa key criada .
+
+
+
+EM NETWORKING:
+
+
+VPC: vamos escolher a unica opção de VPC que ele fornece.
+
+Subnets: a primeira opção.
+
+Secutiry Group: default. (para controle de acessos de portas, é aqui que deve ser editado)
+
+Create.
+
+
+
+
+
