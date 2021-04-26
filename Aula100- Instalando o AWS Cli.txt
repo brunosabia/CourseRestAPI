@@ -1,0 +1,19 @@
+AWS CLI = AWS Command Line Interface
+
+Só procurar no AWS console e baixar o instalador.
+
+Instalação padrão.
+
+após instalação, abrir powershell
+
+digitar:
+aws configure   
+
+
+inserimos o keyID  da nossa conta
+nossos Secret Key
+e a região está no URL do site da amazon
+
+o output format é : json
+
+com isso são criados arquivos com essas informações que fazem a authentication.

@@ -1,0 +1,12 @@
+Um repositório Amazon ECR (Elastic Container Registry) é onde você armazena as imagens dos containers (funciona igual um dockerHub).
+No AWS
+abrimos o ECR e Get Started
+
+especificamos o nome do repositório (separado por hifen, pois não podemos usar Caixa Alta EX:rest-with-spring-boot-udemy)
+
+CREATE REPOSITORY
+
+copiamos o URI fornecido.
+
+
+PARA ENVIARMOS AS IMAGENS PARA O AWS, precisamos ANTES instalar o AWS Cli(A PROXIMA AULA100 SÓ ENTAO PROSSEGUIR), entrando no repositório que acabamos de criar, existe um botão "View push commands" nós clicaremos nesse botão e realizaremos as opções de Windows.
