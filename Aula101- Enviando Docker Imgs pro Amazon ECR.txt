@@ -1,0 +1,34 @@
+Após instalar o AWS Cli (o console da Amazon) da aula 100:
+
+no powershell. colamos o link do diretório onde está o nosso codigo:
+
+cd PATH_DO_CODIGO
+
+docker-compose build
+
+
+	$(aws ecr get-login --no-include-email --region us-east-2)
+
+
+COPIAR a resposta toda desse comando e cole no terminal, ENTER. em seguida:
+
+
+	docker build -t rest-with-spring-boot-udemy .
+
+NESTE CASO, O DOCKER BUILD JA FOI FEITO, ALI EM CIMA. ENTAO O PASSO ACIMA NAO FOI NECESSÁRIO, CONTINUANDO:
+	
+	docker tag leandrocgsi/rest-with-spring-boot-udemy:latest 600842930730.drk.ecr.us-east-2.amaxonaws.com/rest-with-spring-boot-udemy:latest...
+
+
+CASO DE ALGUM ERRO, VERIFIQUE SE O CAMINHO DA IMAGE ESTA CERTO NO docker images
+
+	docker push 600842930730.drk.ecr.us-east-2.amaxonaws.com/rest-with-spring-boot-udemy:latest...
+
+FAZENDO O PUSH PARA O REP DE IMAGES DA AMAZON (ECR)
+
+
+Lembrando que estes comandos podem ser encontrados dentro do ECR Repositories no botao "View push commands".
+
+
+
+
