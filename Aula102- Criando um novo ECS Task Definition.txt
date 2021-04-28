@@ -1,0 +1,33 @@
+Após enviarmos as imagens dos containers para o ECR da Amazon, 
+nós iremos criar um new Task Definition dentro do ECS. Task definition é necessária para executarmos os containers Docker no Amazon.
+O Launch type que escolheremos sera o EC2.
+
+nome: RestWithSpringBootUdemy
+
+Rquires Compatibilities: EC2
+
+
+deixa varias coisas em branco até Task size/Task memory:
+
+512
+
+Task CPU:
+512
+
+Add container:
+nome:
+RestWithSpringBootUdemy
+
+image: o link do repositório, exemplo:
+600842930730.drk.ecr.us-east-2.amaxonaws.com/rest-with-spring-boot-udemy:latest...
+
+Port Mappings:
+8080 e 8080 e tcp
+
+resto tudo default.
+Add.
+
+Create!
+
+Criamos nosso TaskDefinition
+
