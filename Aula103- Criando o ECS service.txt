@@ -1,1 +1,43 @@
 
+Dentro do Amazon ECS, em TASK Definition, nós vamos em Actions -> Create Service :
+
+EC2
+
+Utilizamos o task Definition da family: RestWithSpringBootUdemy , neste caso
+
+Cluster: RestWithSpringBootUdemy 
+
+Service Name: RestWithSpringBootUdemy 
+
+REplica
+
+numero de tasks: 1
+
+Minimum healthy percent 100
+
+maximum percent 200
+
+Deployment type: Rolling update
+
+
+Task Placement: AZ Balance Spread
+
+Next Step
+
+DESMARQUE o Enable service discovery integration
+
+Load Balancing - None
+
+Next Step
+
+Set Auto Scaling - Do not Adjust the service's desired count
+
+Next Step
+
+
+
+Create service!
+
+
+
+Após criar esse Service, nós temos uma instance rodando do nosso servico, se clicarmos no EC2 do serviço e copiarmos o link ou IP dele para o navegador ele irá acessar o servico executando.
