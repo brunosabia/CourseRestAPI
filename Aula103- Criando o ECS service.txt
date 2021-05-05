@@ -9,7 +9,7 @@ Cluster: RestWithSpringBootUdemy
 
 Service Name: RestWithSpringBootUdemy 
 
-REplica
+Replica
 
 numero de tasks: 1
 

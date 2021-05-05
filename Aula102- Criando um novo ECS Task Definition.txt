@@ -32,3 +32,5 @@ Create!
 
 Criamos nosso TaskDefinition
 
+Agora criaremos um task Service que iniciará nosso serviço de task.
+
