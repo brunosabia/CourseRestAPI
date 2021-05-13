@@ -1,6 +1,6 @@
-
 Dentro do Amazon ECS, em TASK Definition, nós vamos em Actions -> Create Service :
 
+ 
 
 EC2
 
