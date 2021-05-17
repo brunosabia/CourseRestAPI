@@ -1,3 +1,6 @@
+An Amazon ECS service allows you to run and maintain a specified number of instances of a task definition simultaneously in an Amazon ECS cluster.
+
+
 Dentro do Amazon ECS, em TASK Definition, nós vamos em Actions -> Create Service :
 
  
