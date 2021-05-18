@@ -1,0 +1,119 @@
+oreilly books!
+cursos bons = Pearson!
+
+AULA 1 - RESPONDIDA
+
+PERGUNTAS:
+
+-é comum esse Cross-Site Request Forgery - crsf ficar disabled? (SecurityConfig.java) L38
+R-NÃO
+
+-esta implementação de encryptar a senha que está no startup faria parte de um frontEnd?
+R-normalmente não, a encryptação pode ser feita no front end mas não é tão comum
+
+-existe uma forma de explicar o annotation @Bean de uma forma mais simples?
+R-Bean é uma injeção de dependencia que só já instancia uma vez só. por exemplo, para setar configurações fixas.
+
+-Quando o Bean é carregado? apenas na primeira execução e então ele é mantido ate quando?
+R-sim.
+
+-JWT é muito utilizada? é usada com ASP.net?
+R-sim é usada com todas as linguagens , a melhor de todas
+
+-Não entendi muito bem a logica e função dessas classes Repositories
+
+
+-os testes unitários testam métodos simples como os getters e setters tambem?
+R não,normalmente é só nos services
+
+ O COMECO DA API é no controller, o main fica vazio assim msm
+
+
+
+AULA 2 - 
+
+PERGUNTAS:
+
+
+A authentication pelo JWT, no caso eu só estou aceitando por Json, onde seriam as alterações para aceitar o processo pelo xml ou yaml?
+aceita x-yaml e xml já nao precisa mais
+
+O que seria o Container? vejo sendo citado em sites de dev mas nao entendi o que seria o container da minha API.
+JPA- que é o responsável pela conexão com o bd
+
+Conceito ACID de BD é usado?
+Sim. Atomicidade, ou tudo ou nada, transferencias de dinheiro por exemplo, se der erro, nao acontece
+
+O verbo PATCH é comumente usado para updates em objs grandes no banco? ele realmente nao é recomendado pelos riscos?
+No meu caso, o PATCH foi usado só para executar um metodo que troca um boolean. nao foi muito um "update" no objeto, é esse o uso normalmente?
+
+Na minha API, quando realizo um findAll pra Person no postman, quando eu clico em um link de acesso para algum deles, eu preciso fazer a authenticação individualmente?
+Quando essa API for utilizada por algum client, por exemplo, como eu sei que o Authorization Bearer Token sera aplicado nesta nova aba?
+só acontece no postman
+
+Gostaria de criar um user. Pelo curso os unicos usuários criados foram incluidos no banco atravez de migrations. como funciona a logica de criar um user atraves de um POST no banco? em que momento eu encryptaria a password?
+a password poderia vir encryptada pro cadastro,
+só criar um POST com o user e senha e permissoes
+
+
+
+
+
+AULA 3-
+
+com o site funcionando assim, o front chamaria cada link desses para cada ação? por curiosidade, como o front definiria qual o verbo a ser chamado?
+R-é simples, ele define o HttpStatus na hora da chamada.
+
+agora que o UploadFiles esta funcionando, como por exemplo, um user uploadando um Curriculo , como eu atrelaria esse File ao user e ele seria armazenado no UploadDir junto com todo o resto? seria possível criar uma pasta por userId e armazenar dentro dela ?
+R-normalmente é salvo um path até o arquivo no banco para o item atrelado ao user. 
+
+
+
+AULA 4-
+
+0- Para garantir que entendi, o Docker se porta como se fosse uma VM, PORÉM é como se o SO ficasse no servidor deles e eles apenas disponibilizassem o acesso as bibliotecas da aplicação que você deseja acessar?
+R- não exatamente, o servidor deles nao possui um SO, ele possui apenas as bibliotecas.
+
+1-como o Docker é usado em um ambiente de produção? 
+R-Normal, o server utilizaria uma imagem de banco MySQL por exemplo e rodaria normalmente.
+
+2- O docker é mais valido pela  velocidade e facilidade de interação com as aplicações nos containers ou pela praticidade de nao executar as aplicações localmente e a mobilidade que isso trás?
+R- na real pelos 2.
+
+3- o docker Compose é sempre complexo mesmo? tendo que contar espaços e tudo?
+R- sim.
+
+4- como funciona a parte que eu ja fiz de upload de files se a aplicação está rodando do docker? notei que parou de funcionar quando executei pelo docker.
+R-Está funcionando, porém, o armazenamento do file fica dentro do container.
+Comandos que o dandan usou:
+	docker ps
+	winpty docker exec -it 255aa3512ab5 bash
+	/RestWithSpringBootUdemy/src/main/resources# cat application.properties               Esse serve para abrir o arquivo
+
+
+
+5- é interessante começar uma aplicação já integrando ela pelo docker ou é indiferente?(utilizando o banco a partir do docker, por exemplo)
+R- indiferente.
+
+
+
+//AULA 4- PARTE 2
+
+6- Ao fazer o push automatico pelo TravisCI do github para o dockerHub, o Travis nao está reconhecendo os pushs, entao me força a ir até lá e buscar pelo nome do commit para ele realizar a build e atualizar o dockerHub.
+R-
+
+
+7- o TravisCI só é importante no periodo de dev? tem alguma função do TravisCI para quando ele está em produção?
+R-
+8- a localização do docker seria no server side correto? onde ele seria responsável container do banco e da aplicação? é isso?
+R-
+9- preciso conhecer todas essas ferramentos do AWS ou algumas nao são tão relevantes?
+R-
+10- o MySQL local se torna desnecessário após o docker ou o AWS Relational Database?
+R-
+11- o Docker e o AWS existem juntos dentro de uma mesma aplicação? Rodar a aplicação dentro do docker utilizando o BD do AWS por exemplo?
+R-
+12- A task definition do ECS funciona como a chamada do container por parte do AWS?
+R-
+13- é comum o uso do Putty pra acessar instancias EC2 via SSH? essa parte me pareceu complexa.
+R-
