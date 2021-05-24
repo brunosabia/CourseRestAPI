@@ -7,6 +7,7 @@ Dentro do Amazon ECS, em TASK Definition, nós vamos em Actions -> Create Servic
 
 EC2
 
+
 Utilizamos o task Definition da family: RestWithSpringBootUdemy , neste caso
 
 Cluster: RestWithSpringBootUdemy 
