@@ -1,0 +1,8 @@
+é necessario linkar as imagens utilizadas pelo docker ao serviço no AWS ECS. 
+devemos criar um cluster, uma Task e um Service.
+
+o que é um AWS cluster?
+
+O que é um AWS Task Definition?
+
+O que é um AWS Service?(não é obrigatório)
