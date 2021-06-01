@@ -2,7 +2,9 @@
 devemos criar um cluster, uma Task e um Service.
 
 o que é um AWS cluster?
+É um grupo de Tasks ou Servicos
 
 O que é um AWS Task Definition?
+e onde especificamos os diversos parametros para nossa aplicação. como o tamanho separado pra cada container.
 
 O que é um AWS Service?(não é obrigatório)
