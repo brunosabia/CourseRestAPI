@@ -1,3 +1,6 @@
 A integração contínua é uma prática de desenvolvimento de software de DevOps em que os desenvolvedores, com frequência, juntam suas alterações de código em um repositório central. Depois disso, criações e testes são executados. Geralmente, a integração contínua se refere ao estágio de criação ou integração do processo de lançamento de software, além de originar um componente de automação (ex.: uma CI ou serviço de criação) e um componente cultural (ex.: aprender a integrar com frequência). Os principais objetivos da integração contínua são encontrar e investigar bugs mais rapidamente, melhorar a qualidade do software e reduzir o tempo que leva para validar e lançar novas atualizações de software.
 
 anteriormente os desenvolvedores trabalhavam separadamente e juntavam suas alterações ao codigo master somente quando concluidos. Tornando um acumulo de erros sem correções por longos período.
+
+O serviço de integração continua no caso da nossa aplicação com o AWS segue o fluxo de 
+ao executarmos a aplicação, ela envia as imagens para o docker hub, e utilizando o TRAVIS CI ele e ECS é feito uma validação e armazenamento desse serviço em execução pós deploy.
