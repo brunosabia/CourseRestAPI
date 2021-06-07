@@ -1,0 +1,15 @@
+Existe uma forma de substituir o Application.properties por um Application.yml. 
+Principalmente essa substituição é feita pela facilidade de leitura da file yaml, porém ela tambem possui mais integração com outra linguagens como python. Em um .yml file é possível possuir multiplos spring profile.
+Se mais de uma aplicação usa o file, o yml é recomendado. Porém se for somente para o Spring, ele tem padrões que tornam o application.properties tão válido quanto o .yml.
+
+Basicamente o .yml substitui os "=" por ": " e é preciso o controle dos espaços, além da linguagem hierárquica.
+
+http://www.yamllint.com/ 
+Para validar seu código yml
+
+Arquétipos Maven:
+
+Uma das responsabilidades do Maven é gerenciar as dependências do projeto, ou seja, aquelas bibliotecas que você ficou DIAS procurando na internet (que também podem não ser as oficiais...) estão em um lugar só, seja um repositório local ou um repositório "direto".
+
+
+Criar um arquétipo Maven é basicamente pegar um projeto e tornar ele a base para outro projeto sem simplesmente dar um ctrl+C e ctrl+V e renomear os pacotes e variáveis. Neste caso é preciso seguir a seguinte lógica:
