@@ -13,3 +13,36 @@ Uma das responsabilidades do Maven é gerenciar as dependências do projeto, ou 
 
 
 Criar um arquétipo Maven é basicamente pegar um projeto e tornar ele a base para outro projeto sem simplesmente dar um ctrl+C e ctrl+V e renomear os pacotes e variáveis. Neste caso é preciso seguir a seguinte lógica:
+
+Acessando a pasta do projeto, e deletando a pasta target, .classpath, .project e .settings
+
+depois disso, iremos abrir o gitBash nesta pasta do projeto que será tornado o Archetype:
+
+mvn archetype:create-from-project
+
+(provavelmente vai dar um erro, pois quando o maven foi instalado, nao foi criado o arquivo C:Users\bruno\.m2\settings.xml. Para consertar isso nós vamos até esse path para add esse file. com o seguinte código:
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+					  https://maven.apache.org/xsd/settings-1.0.0.xsd">
+</settings>
+
+
+deixei tb o file na pasta como settingsArchetype.xml, só tirar o Archetype do nome)
+
+quando o settings.xml for criado, novamente tentar usar o comando:
+
+mvn archetype:create-from-project
+
+se resultar Build Success é só olhar o diretório que o archetype foi criado no bash e irmos até lá.
+
+nesse endereço do arquetype, abrimos o bash tb e digitamos(caso queira fazer alterações nos nomes do projeto é agora que devem ser feitas com alterações no pom.xml, antes do clean install, que vai compilar o projeto e salvar como archetype na pasta .m2/repository/projeto(no caso br)/(com)/(erudio)):
+
+mvn clean install
+
+
+
+outro txt na aula 42.
+
+

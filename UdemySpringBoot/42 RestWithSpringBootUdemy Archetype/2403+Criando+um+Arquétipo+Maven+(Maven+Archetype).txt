@@ -1,0 +1,20 @@
+mvn archetype:create-from-project
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+					  https://maven.apache.org/xsd/settings-1.0.0.xsd">
+</settings>
+
+mvn archetype:create-from-project
+
+mvn clean install
+
+=================================
+TO LEARN MORE ABOUT MAVEN ARCHETYPES
+=================================
+
+https://maven.apache.org/guides/introduction/introduction-to-archetypes.html
+https://maven.apache.org/guides/mini/guide-creating-archetypes.html
+https://www.baeldung.com/maven-archetype
+http://tutorials.jenkov.com/maven/maven-archetypes.html
