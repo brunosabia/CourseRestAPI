@@ -1,0 +1,22 @@
+Criando um projeto a partir de um archetype já criado (na aula BONUS- Atalhos de Produtividade)
+
+Criar uma pasta, abrir o git bash:
+
+mvn archetype:generate -DarchetypeGroupId="GroupId do archetype que estará no pom.xml do projeto archetype" -DarchetypeArtifactId="ArtifactId do archetype que estará no pom.xml do projeto archetype"
+
+(sem as aspas)
+
+após isso, ele irá pedir valores para novos GroupId e ArtifactId deste novo projeto, no caso o que ele usou foi :
+'groupId': br.com.erudio
+'artifactId': rest-from-archetype
+'version': ele só deu ENTER pra manter a que ele recomenda
+'package': seria o nome do package, se quiser mudar é aqui que digita, senao só ENTER pra manter
+Y = yes?
+
+ai ele passa o path do novo projeto.
+ele faz as alterações de boa parte de nomes de pacotes e imports e só nao substitui os nomes dos comentários ou algum string.
+O projeto continua funcional.
+O codigo é todo reaproveitado.
+
+
+Archetypes são uma grande facilidade por existem catalogos gigantescos de códigos já prontos para facilitar a vida.
