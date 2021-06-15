@@ -1,3 +1,4 @@
+
 Criando um projeto a partir de um archetype já criado (na aula BONUS- Atalhos de Produtividade)
 
 Criar uma pasta, abrir o git bash:
