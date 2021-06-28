@@ -1,0 +1,3 @@
+Iremos aprender agora como conectar a nossa aplicaçao a outros bancos de dados, como o SQL Server , Postgree...etc.
+E utilizaremos o SQLines para conversão de scripts SQL para de outros bds.
+
