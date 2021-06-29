@@ -20,4 +20,5 @@ O projeto continua funcional.
 O codigo é todo reaproveitado.
 
 
+
 Archetypes são uma grande facilidade por existem catalogos gigantescos de códigos já prontos para facilitar a vida.
