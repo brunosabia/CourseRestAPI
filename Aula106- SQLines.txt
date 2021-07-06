@@ -1,0 +1,5 @@
+é um site que realiza a conversão dos códigos de banco principais.
+
+https://www.sqlines.com/online
+
+primeiro que teste que faremos sera a partir do conteudo da aula UdemySpringBoot/40 Simultaneous Uploads e migraremos de MySQL para PostgreSQL	
