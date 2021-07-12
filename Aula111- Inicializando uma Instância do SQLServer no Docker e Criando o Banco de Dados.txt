@@ -1,0 +1,35 @@
+docker run --name containerSQLServer -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=admin123!" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+
+https://dbeaver.io/download/
+
+basicamente iremos primeiro criar o container do SQLServer no docker(powershell) com o comando acima, 
+ verificar se o container está de fato running. 
+em seguida utilizar o Dbeaver para acompanhar o comportamento desse BD.
+Após isso,
+no projeto utilizado, apagar as migrations e adicionar as novas migrations com a linguagem do SQLServer(talvez seja interessante utilizar o SQLines para realizar a migração) e então adicionar o driver correto nas application.properties:
+
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.datasource.url=jdbc:sqlserver://localhost;databaseName=rest_with_spring_boot_udemy
+spring.datasource.username=sa
+spring.datasource.password=admin123!
+
+spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.SQLServer2012Dialect
+
+//LEMBRANDO QUE O URL(jdbc:sqlserver://localhost;databaseName=rest_with_spring_boot_udemy) TAMBEM DEVERA SER ADICIONADO AO PLUGIN DO POM DO MAVEN E DO FLYWAY E O USER DEVERÁ SER ALTERADO PARA SA(EQUIVALE AO ROOT PARA O SQLSERVER) ALEM DE QUE A SENHA TB DEVE SER ALTERADA(no caso um "!") , POIS SQLSERVER PRECISA DE UM CARACTÉR ESPECIAL
+
+
+//no flyway configs do application properties tb:
+flyway.url=jdbc:sqlserver://localhost;databaseName=rest_with_spring_boot_udemy
+flyway.schemas=dbo
+flyway.user=sa
+flyway.password=admin123!
+
+
+
+Além de ajustar o pom.xml:
+
+<!-- for SQL Server support -->
+<dependency>
+	<groupId>com.microsoft.sqlserver</groupId>
+	<artifactId>mssql-jdbc</artifactId>
+</dependency>
