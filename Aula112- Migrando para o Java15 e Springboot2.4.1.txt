@@ -1,0 +1,4 @@
+44 RestWithSpringBootUdemy Java15 and SpringBoot 2.4.1 update
+começamos alterando as versões no arquivo POM, tanto do java quanto do springboot, após isso, abrimos o projeto no eclipse e verificamos a versão do Java no JRE System Library. Para só entao irmos percorrendo o código e corrigindo.
+
+um exemplo é no package config/WebConfig o parametro ".favorPathExtension(false)" foi depreciado, pois seu valor default agora é false. logo, não há necessidade de mantê-lo (eu comentei para exemplos futuros)
