@@ -24,9 +24,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.erudio.data.vo.v1.UploadFileResponseVO;
 import br.com.erudio.services.FileStorageService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Api(tags = "FileEndpoint")
+@Tag(name =  "FileEndpoint")
 @RestController
 @RequestMapping("/api/file/v1")
 public class FileController {

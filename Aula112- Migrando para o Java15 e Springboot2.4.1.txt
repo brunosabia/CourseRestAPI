@@ -1,4 +1,25 @@
 44 RestWithSpringBootUdemy Java15 and SpringBoot 2.4.1 update
+
+
 começamos alterando as versões no arquivo POM, tanto do java quanto do springboot, após isso, abrimos o projeto no eclipse e verificamos a versão do Java no JRE System Library. Para só entao irmos percorrendo o código e corrigindo.
 
 um exemplo é no package config/WebConfig o parametro ".favorPathExtension(false)" foi depreciado, pois seu valor default agora é false. logo, não há necessidade de mantê-lo (eu comentei para exemplos futuros)
+
+
+
+Nessa alteração o HATEOAS mudou muito seus termos, entao iremos alterar códigos referidos nos VOs ao org.springframework.hateoas.ResourceSupport;
+
+pois este foi alterado.
+substituimos  ResourceSupport por RepresentationalModel<>
+
+em seguida corrigimos os Controllers, alterando imports do Hateoas novamente.
+nos controllers alteramos as responses entities dos métodos que retornavam ResponseEntity por CollectionModels do type que queremos retornar.
+
+
+além de que os returns desses métodos que retornam listas de models tb foi alterado. para(no caso do Books Controller):
+
+return ResponseEntity.ok(CollectionModel.of(books));
+
+após isso, realizo o ctrl+shift+O para verificar imports e salvo.
+pronto, warnings são removidos. 
+PORÉM o programa ainda nao rodou, pois existem atualizações do swagger pendentes.

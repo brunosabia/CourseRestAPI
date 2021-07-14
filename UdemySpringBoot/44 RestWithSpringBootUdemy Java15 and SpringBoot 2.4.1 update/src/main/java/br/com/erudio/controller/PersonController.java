@@ -1,7 +1,7 @@
 package br.com.erudio.controller;
 
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
-import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -9,9 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.web.PagedResourcesAssembler;
-import org.springframework.hateoas.PagedResources;
-import org.springframework.http.HttpStatus;
+import org.springframework.hateoas.CollectionModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,23 +24,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.erudio.data.vo.v1.PersonVO;
 import br.com.erudio.services.PersonServices;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Api(tags = "PersonEndpoint")
+@Tag(name =  "PersonEndpoint")
 @RestController
 @RequestMapping("/api/person/v1")
 public class PersonController {
 	
 	@Autowired
 	private PersonServices service;
+
 	
-	@Autowired
-	private PagedResourcesAssembler<PersonVO> assembler;
-	
-	@ApiOperation(value = "Find all people" ) 
+	@Operation(summary = "Find all people" ) 
 	@GetMapping(produces = { "application/json", "application/xml", "application/x-yaml" })
-	public ResponseEntity<?> findAll(
+	public ResponseEntity<CollectionModel<PersonVO>> findAll(
 			@RequestParam(value="page", defaultValue = "0") int page,
 			@RequestParam(value="limit", defaultValue = "12") int limit,
 			@RequestParam(value="direction", defaultValue = "asc") String direction) {
@@ -59,15 +55,15 @@ public class PersonController {
 				)
 			);
 		
-		PagedResources<?> resources = assembler.toResource(persons);
 		
-		return new ResponseEntity<>(resources, HttpStatus.OK);
+		
+		return ResponseEntity.ok(CollectionModel.of(persons));
 	}	
 	
 	
-	@ApiOperation(value = "Find a specific person by name" ) 
+	@Operation(summary =  "Find a specific person by name" ) 
 	@GetMapping(value = "/findPersonByName/{firstName}", produces = { "application/json", "application/xml", "application/x-yaml" })
-	public ResponseEntity<?> findPersonByName(
+	public ResponseEntity<CollectionModel<PersonVO>> findPersonByName(
 			@PathVariable("firstName") String firstName,
 			@RequestParam(value="page", defaultValue = "0") int page,
 			@RequestParam(value="limit", defaultValue = "12") int limit,
@@ -85,12 +81,10 @@ public class PersonController {
 				)
 			);
 		
-		PagedResources<?> resources = assembler.toResource(persons);
-		
-		return new ResponseEntity<>(resources, HttpStatus.OK);
+		return ResponseEntity.ok(CollectionModel.of(persons));
 	}	
 	
-	@ApiOperation(value = "Find a specific person by your ID" )
+	@Operation(summary = "Find a specific person by your ID" )
 	@GetMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO findById(@PathVariable("id") Long id) {
 		PersonVO personVO = service.findById(id);
@@ -98,7 +92,7 @@ public class PersonController {
 		return personVO;
 	}	
 	
-	@ApiOperation(value = "Create a new person") 
+	@Operation(summary = "Create a new person") 
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO create(@RequestBody PersonVO person) {
@@ -107,7 +101,7 @@ public class PersonController {
 		return personVO;
 	}
 	
-	@ApiOperation(value = "Update a specific person")
+	@Operation(summary = "Update a specific person")
 	@PutMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, 
 			consumes = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO update(@RequestBody PersonVO person) {
@@ -117,7 +111,7 @@ public class PersonController {
 	}	
 	
 	
-	@ApiOperation(value = "Disable a specific person by your ID" )
+	@Operation(summary = "Disable a specific person by your ID" )
 	@PatchMapping(value = "/{id}", produces = { "application/json", "application/xml", "application/x-yaml" })
 	public PersonVO disablePerson(@PathVariable("id") Long id) {
 		PersonVO personVO = service.disablePerson(id);
@@ -125,7 +119,7 @@ public class PersonController {
 		return personVO;
 	}	
 	
-	@ApiOperation(value = "Delete a specific person by your ID")
+	@Operation(summary = "Delete a specific person by your ID")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		service.delete(id);
