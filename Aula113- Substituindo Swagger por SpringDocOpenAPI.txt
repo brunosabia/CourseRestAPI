@@ -1,5 +1,3 @@
-44 RestWithSpringBootUdemy Java15 and SpringBoot 2.4.1 update
-
 OPEN API é basicamente uma especificação de documentação para APIs RESTFUL substituindo o swagger,
 E o spring adiciona essa OpenAPI da seguinte forma:
 
@@ -33,4 +31,6 @@ agora, iremos alterar dentro dos controllers as tags @Api, que foram descontinua
 e tambem @ApiOperation(value="descrição do metodo") foi substituido por @Operation(summary="Descrição do método")
 
 
-após alterar essas informações da application toda, iremos ao file SwaggerConfig e primeiramente mudaremos o seu nome para OpenApiConfig
+após alterar essas informações da application toda, iremos ao file SwaggerConfig e primeiramente mudaremos o seu nome para OpenApiConfig()
+
+mudaremos todo o código desta classe.
