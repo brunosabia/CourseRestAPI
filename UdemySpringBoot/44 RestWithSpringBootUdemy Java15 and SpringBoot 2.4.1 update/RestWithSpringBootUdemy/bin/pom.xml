@@ -114,10 +114,9 @@
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>/44 RestWithSpringBootUdemy Java15 and SpringBoot 2.4.1 update/RestWithSpringBootUdemy/src/main/java/br/com/erudio/Startup.java</mainClass>
 					<url>jdbc:mysql://localhost:3306/rest_with_spring_boot_udemy?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
 					<user>root</user>
-					<password>docker</password>
+					<password>admin123</password>
 				</configuration>
 				<dependencies>
 					<dependency>
