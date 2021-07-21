@@ -34,3 +34,6 @@ e tambem @ApiOperation(value="descrição do metodo") foi substituido por @Opera
 após alterar essas informações da application toda, iremos ao file SwaggerConfig e primeiramente mudaremos o seu nome para OpenApiConfig()
 
 mudaremos todo o código desta classe.
+
+
+LEMBRE SE DE ATUALIZAR OS DOCKER FILES PRAS VERSÕES CORRETAS DE MAVEN OU BD
