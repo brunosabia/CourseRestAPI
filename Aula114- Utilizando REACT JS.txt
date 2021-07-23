@@ -1,0 +1,21 @@
+Antigamente as aplicações utilizavam uma abordagem tradicional onde o back-end retornava os códigos em HTML , CSS para a exibição do client.
+
+Recentemente surgiram o Angular, React Js, entre outros que são responsáveis pela interpretação e disposição de um JSON que o back-end retorna, em vez da pagina toda de view. Essa abordagem é chamada de SPA(Single Page Application)
+
+
+primeiramente vamos instalar o NODE JS que encontramos aqui:
+https://nodejs.org/en/download/
+
+iremos realizar o install do Node pelo package Manager, e na opção para WINDOWS somos redirecionados para o Chocolatey, que instalamos atraves do powershell:
+https://chocolatey.org/install
+(para testar que o chocolatey está instalado, no powershell, digitar "choco")
+APOS instalar o chocolatey, voltamos para o nodeJs
+no powershell novamente digitaremos o cinst nodejs-lts   
+digite 'Y' para permitir os scripts de instalação.
+
+após a instação, reiniciar o powershell e executar o comando node -v
+que irá retornar a versão instalada do nodeJS
+
+tambem é bom verificar a versão do Node Package Manager, conhecido como npm
+comando:
+npm -v
