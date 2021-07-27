@@ -1,0 +1,28 @@
+iremos utilizar o 45 RestWithSpringBootUdemy React nesta aula, primeiramente vamos até a pasta do projeto, apagamos todos os arquivos menos o 
+-src
+-Collections
+-pom.xml
+
+criamos uma pasta chamada de 'server'
+movemos o src e o pom.xml pra dentro da pasta 'server'
+
+copiamos o path da pasta e abrimos o powershell como adm
+no powershell comando:
+cd 'C:\Users\bruno\source\CursoRestAPI\UdemySpringBoot\45 RestWithSpringBootUdemy React'
+
+para confirmar a pasta certa:
+ls 
+
+em seguida:
+npx create-react-app client
+
+após o client concluir: 
+ls
+cd client
+
+após entrarmos na pasta client, utilizaremos o seguinte código para abrir o vscode neste diretório:
+code .
+
+
+após o vsCode abrir o projeto, CASO QUEIRA executar o projeto, abrir o "Terminal" do VS Code e digitar:
+npm start
