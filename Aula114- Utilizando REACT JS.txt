@@ -18,4 +18,5 @@ que irá retornar a versão instalada do nodeJS
 
 tambem é bom verificar a versão do Node Package Manager, conhecido como npm
 comando:
+
 npm -v
