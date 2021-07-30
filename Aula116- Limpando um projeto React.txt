@@ -1,0 +1,34 @@
+45 RestWithSpringBootUdemy React
+
+logo que abrimos o projeto react iniciado na aula anterior iremos apagar alguns files para limpar o nosso projeto:
+na pasta public:
+	logo192.png
+	logo.512.png
+	robots.txt
+	manifest.json
+
+
+
+na pasta src:
+	App.css
+	App.test.js
+	index.css
+	logo.svg
+	reportWebVitals.js
+	setupTests.js
+
+APÓS esta limpada, no index.js excluimos o  import do index.css e do reportWebVitals que foram deletados
+
+e apagamos o comentário com a chamada do reportWebVitals no fim tambem. 
+(aproveitamos pra compiar o "import React from 'react';"
+
+na App.js iremos colar o import do react pra substituir o import do logo e css
+
+nessa function iremos remover todo o conteudo do return e substituir pelo conteudo <h1>Hello World</h1>
+e iremos adicionar o export default para a linha da function App() para remover a necessidade de chamar o método App() novamente no fim.
+
+
+por fim na index.html iremos remover as informações acima do title até antes do <meta name = "theme-color" content="#00000000"/>
+removeremos os comentários de baixo tambem. 
+
+Se quiser, mudar o title pro que quiser.
