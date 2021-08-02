@@ -17,6 +17,7 @@ na pasta src:
 	reportWebVitals.js
 	setupTests.js
 
+
 APÓS esta limpada, no index.js excluimos o  import do index.css e do reportWebVitals que foram deletados
 
 e apagamos o comentário com a chamada do reportWebVitals no fim tambem. 
