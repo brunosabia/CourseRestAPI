@@ -24,5 +24,6 @@ após entrarmos na pasta client, utilizaremos o seguinte código para abrir o vs
 code .
 
 
+
 após o vsCode abrir o projeto, CASO QUEIRA executar o projeto, abrir o "Terminal" do VS Code e digitar:
 npm start
